@@ -1,4 +1,4 @@
-# 人类性欲之地图 · 中文互动版
+# 人类性癖地图 · 中文互动版
 
 > **A Map of the Lands of Human Sexuality — Chinese Interactive Edition**
 
