@@ -24,9 +24,10 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;
    MAP VIEWPORT & WORLD
 ═══════════════════════════════════════════════════════════ */
 #vp{width:100vw;height:100vh;overflow:hidden;position:relative;cursor:grab;
-    touch-action:none} /* tell browser: we handle all touch gestures ourselves */
+    touch-action:none;background:var(--bg)}
 #vp.drag{cursor:grabbing}
-#world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
+#world{position:absolute;top:0;left:0;transform-origin:0 0;
+       backface-visibility:hidden;-webkit-backface-visibility:hidden}
 #bg{display:block;max-width:none;user-select:none;pointer-events:none}
 #geo-svg{position:absolute;top:0;left:0;pointer-events:none;overflow:visible}
 
@@ -35,16 +36,15 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;
    ALL labels are COUNTER-SCALED via --inv CSS variable:
      #labels gets  style.setProperty('--inv', 1/zoom)  once per frame
      .lbl-rgn  transform-origin 50% 50%  (scales from centroid)
-     .lbl-ent  transform-origin  0 50%  (scales from left-center / anchor)
+     .lbl-ent  transform-origin  0 0  (top anchor; translateX(-50%) centers)
    Result: labels always render at their CSS font-size in screen pixels.
    No blurring at any zoom. Zero per-label DOM writes per frame.
 ═══════════════════════════════════════════════════════════ */
-#labels{position:absolute;top:0;left:0;pointer-events:none}
+#labels{position:absolute;top:0;left:0;pointer-events:none;overflow:hidden}
 
-/* LOD: single className switch on container */
-#labels.lod-none .lbl    {visibility:hidden}
-#labels.lod-rgn  .lbl-ent{visibility:hidden}
-/* lod-all: default, nothing hidden */
+/* LOD: keep #labels in tree (avoid display:none flash); hide children only */
+#labels.lod-none .lbl{visibility:hidden;pointer-events:none}
+#labels.lod-rgn .lbl-ent{display:none!important}
 
 .lbl{
   position:absolute;
@@ -52,6 +52,7 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;
   pointer-events:auto;cursor:pointer;
   white-space:nowrap;user-select:none;
   border-radius:3px;padding:1px 3px;
+  background:transparent;
   transition:background .1s;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -61,7 +62,8 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;
 .lbl:active{background:rgba(255,255,255,.3)}
 .lbl.lbl-skip{display:none!important}
 
-/* Counter-scale transforms */
+/* Counter-scale transforms (backface-hidden reduces zoom compositor flashes) */
+.lbl-rgn,.lbl-ent{backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .lbl-rgn{transform:scale(var(--inv,1));transform-origin:50% 50%}
 
 /* Entry: dot at anchor (top-center), text below, wraps at ~6 Chinese chars */
@@ -333,9 +335,12 @@ const Z_MAX  = 4.5;   // reasonable max; labels are crisp at any zoom (counter-s
 const Z_INIT = 0.9;   // starting zoom (title area fills upper-left of screen)
 
 // LOD thresholds
-const Z_RGN  = 0.7;   // region labels appear above this
+const Z_RGN  = 0.7;   // region labels appear above this (effective threshold may be lower — see lodZRgn)
 const Z_ENT  = 1.3;   // entry labels appear above this
 const Z_GEO  = 2.0;   // geo arc labels appear above this
+
+// Never hide regions when map is already at minZoom (wide screens: minZoom can be < Z_RGN)
+function lodZRgn(){return Math.min(Z_RGN,minZoom()*0.98);}
 
 // Label screen font sizes (counter-scaled → always this size on screen)
 const RGN_FONT_SCALE = 1.0;  // JSON fontSize (10–18) × this = screen px
@@ -351,7 +356,9 @@ const GH   = Math.ceil(SVG_H / CELL);
 ═══════════════════════════════════════════════════════════ */
 let items    = [];
 let states   = null;
-let lblEls   = [];      // parallel to items[]
+let lblEls   = [];      // parallel to items[] — null when entry DOM not mounted
+let labelPlaced = null; // Map item → {cx,cy,W,H,sf} from buildLabels
+let entriesMounted = false;
 let geoElems = [];      // [{zh, en, tpHalo, tpFill}] for language switching
 let lang     = 'zh';
 let lastData  = null;
@@ -361,15 +368,20 @@ let zoom = 1, panX = 0, panY = 0;
 let dragging = false, didMove = false, dragO = {x:0,y:0};
 let rafPending = false;
 let curLOD = '', curGeoVis = null, cachedGeoEls = null;
+let entryUnmountTimer = null;
 
 /* ═══════════════════════════════════════════════════════════
    COORDINATE BUG FIX (v5 export double-applied percentage)
 ═══════════════════════════════════════════════════════════ */
 function fixEntryCoords(allRgns) {
-  const FX2=SVG_W*SVG_W/10000, FY2=SVG_H*SVG_H/10000;
-  const FX1=SVG_W/100,         FY1=SVG_H/100;
+  const FX1=SVG_W/100, FY1=SVG_H/100;
+  const FX2=FX1*FX1, FY2=FY1*FY1;
   for(const r of allRgns) for(const e of r.entries||[]) {
     if(e.x==null) continue;
+    // v5 fractional export: 0.133 → ~53% (near region), NOT ×100 → 13%
+    if(e.x>0&&e.x<1&&e.y>0&&e.y<1){e.x*=FX2;e.y*=FY2;continue;}
+    // Already 1–100 % (incl. 1.68%)
+    if(e.x>=1&&e.x<=100&&e.y>=1&&e.y<=100) continue;
     if(e.x*FX2>100||e.y*FY2>100){e.x*=FX1;e.y*=FY1;}
     else{e.x*=FX2;e.y*=FY2;}
   }
@@ -500,12 +512,85 @@ function buildGeoSVG() {
    LABEL PLACEMENT
 
    REGIONS: collision-aware, ALL horizontal, counter-scaled.
-            Placed at centroid. Font size from JSON.
-            Collision detection uses world footprint at Z_RGN.
+            Built at init (~87 DOM nodes).
 
-   ENTRIES: placed directly at anchor. NO collision detection.
-            Counter-scaled. Always visible when zoom ≥ Z_ENT.
+   ENTRIES: anchor placement, no collision. DOM mounted only when
+            zoom ≥ Z_ENT; unmounted below to keep pan smooth.
 ═══════════════════════════════════════════════════════════ */
+function langLabelScale(item){
+  return lang==='en' ? (item.role==='entry' ? 0.83 : 0.80) : 1.0;
+}
+
+function mkLabelEl(i, item, p){
+  const isRgn=item.role==='region';
+  const el=document.createElement('div');
+  el.className=['lbl',isRgn?'lbl-rgn':'lbl-ent',item.warn?'lbl-warn':''].filter(Boolean).join(' ');
+
+  if(isRgn) {
+    el.style.left=(p.cx-p.W/2)+'px';
+    el.style.top =(p.cy-p.H/2)+'px';
+  } else {
+    el.style.left=item.ax+'px';
+    el.style.top =item.ay+'px';
+  }
+
+  el.dataset.s=String(states[i]);
+  el.title=item.en;
+
+  const dot=document.createElement('div');dot.className='dot';
+  const txt=document.createElement('span');txt.className='ltxt';
+  txt.textContent=lang==='zh'?item.zh:item.en;
+  txt.style.fontSize=(item.screenFont*langLabelScale(item))+'px';
+  el.appendChild(dot);el.appendChild(txt);
+  el.addEventListener('click',e=>{
+    if(didMove) return;
+    e.stopPropagation();
+    const next=(states[i]+1)%5;
+    states[i]=next;
+    el.dataset.s=String(next);
+  });
+  return el;
+}
+
+function mountEntryLabels(){
+  if(entriesMounted||!labelPlaced) return;
+  const container=G('labels');
+  const frag=document.createDocumentFragment();
+  for(let i=0;i<items.length;i++){
+    const item=items[i];
+    if(item.role!=='entry') continue;
+    const el=mkLabelEl(i,item,labelPlaced.get(item));
+    frag.appendChild(el);
+    lblEls[i]=el;
+  }
+  container.appendChild(frag);
+  entriesMounted=true;
+}
+
+function unmountEntryLabels(){
+  if(!entriesMounted) return;
+  for(let i=0;i<items.length;i++){
+    if(items[i].role!=='entry') continue;
+    const el=lblEls[i];
+    if(el) el.remove();
+    lblEls[i]=null;
+  }
+  entriesMounted=false;
+}
+
+function syncEntryMount(){
+  if(zoom>=Z_ENT){
+    if(entryUnmountTimer){clearTimeout(entryUnmountTimer);entryUnmountTimer=null;}
+    mountEntryLabels();
+    return;
+  }
+  if(entryUnmountTimer) clearTimeout(entryUnmountTimer);
+  entryUnmountTimer=setTimeout(()=>{
+    entryUnmountTimer=null;
+    if(zoom<Z_ENT) unmountEntryLabels();
+  },120);
+}
+
 function buildLabels() {
   const grid=new Uint8Array(GW*GH);
   const PAD=3;
@@ -565,46 +650,16 @@ function buildLabels() {
     placed.set(item,{cx:item.ax,cy:item.ay,W:0,H:0,sf:item.screenFont});
   }
 
-  // ── Build DOM ──
-  const ENT_H=ENT_FONT*1.4; // approx entry height in screen px
-  lblEls=items.map((item,i)=>{
-    const p=placed.get(item);
-    const isRgn=item.role==='region';
-    const el=document.createElement('div');
-    el.className=['lbl',isRgn?'lbl-rgn':'lbl-ent',item.warn?'lbl-warn':''].filter(Boolean).join(' ');
-
-    if(isRgn) {
-      // Center at (cx,cy) — transform-origin 50% 50% keeps center fixed during scale
-      el.style.left=(p.cx-p.W/2)+'px';
-      el.style.top =(p.cy-p.H/2)+'px';
-    } else {
-      // Dot at anchor (ax, ay) = TOP of element.
-      // translateX(-50%) in transform centers element horizontally on anchor.
-      el.style.left = item.ax + 'px';
-      el.style.top  = item.ay + 'px';
-    }
-
-    el.dataset.s=String(states[i]);
-    el.title=item.en;
-
-    const dot=document.createElement('div');dot.className='dot';
-
-    const txt=document.createElement('span');txt.className='ltxt';
-    txt.textContent=item.zh;
-    txt.style.fontSize=p.sf+'px';
-
-    el.appendChild(dot);el.appendChild(txt);
-    // Click = cycle through 5 states (0→1→2→3→4→0)
-    el.addEventListener('click',e=>{
-      if(didMove) return;
-      e.stopPropagation();
-      const next=(states[i]+1)%5;
-      states[i]=next;
-      el.dataset.s=String(next);
-    });
+  labelPlaced=placed;
+  entriesMounted=false;
+  lblEls=new Array(items.length);
+  for(let i=0;i<items.length;i++){
+    const item=items[i];
+    if(item.role!=='region') continue;
+    const el=mkLabelEl(i,item,placed.get(item));
     container.appendChild(el);
-    return el;
-  });
+    lblEls[i]=el;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -645,11 +700,10 @@ function toggleLang() {
   // Map labels — update text AND font size
   // English labels tend to be wider/longer, so scale font down slightly
   lblEls.forEach((el,i)=>{
+    if(!el) return;
     const item=items[i], txt=el.querySelector('.ltxt');
     txt.textContent = lang==='zh' ? item.zh : item.en;
-    // English font scale: entries 0.83×, regions 0.80×
-    const scale = lang==='en' ? (item.role==='entry' ? 0.83 : 0.80) : 1.0;
-    txt.style.fontSize = (item.screenFont * scale) + 'px';
+    txt.style.fontSize = (item.screenFont * langLabelScale(item)) + 'px';
   });
   // Geo labels: swap curved Chinese ↔ straight horizontal English
   setGeoVis(zoom >= Z_GEO);
@@ -666,27 +720,30 @@ function toggleLang() {
 
 /* ═══════════════════════════════════════════════════════════
    ZOOM / PAN — RAF throttled
-   applyT writes:  1) world transform  2) --inv CSS variable
-   → ZERO per-label DOM writes per frame
+   applyT: world transform + --inv every frame (pan/zoom stay in sync).
+   checkLOD / entry mount only when zoom changes.
 ═══════════════════════════════════════════════════════════ */
 function scheduleRender(){if(!rafPending){rafPending=true;requestAnimationFrame(applyT);}}
 
+function syncLabelScale(){
+  G('labels').style.setProperty('--inv',(1/zoom).toFixed(6));
+  G('zoom-pct').textContent=Math.round(zoom*100)+'%';
+}
+
 function applyT(){
   rafPending=false;
-  // translate3d: explicit GPU layer hint, smoother compositing
-  G('world').style.transform=`translate3d(${Math.round(panX)}px,${Math.round(panY)}px,0) scale(${zoom})`;
-  // During pure pan (zoom unchanged) skip all expensive zoom-dependent updates
+  G('world').style.transform=`translate3d(${panX}px,${panY}px,0) scale(${zoom})`;
+  syncLabelScale();
   if(zoom!==lastZoom){
     lastZoom=zoom;
-    G('labels').style.setProperty('--inv',(1/zoom).toFixed(6));
-    G('zoom-pct').textContent=Math.round(zoom*100)+'%';
     checkLOD();
   }
 }
 
 function checkLOD(){
-  const lod=zoom<Z_RGN?'none':zoom<Z_ENT?'rgn':'all';
+  const lod=zoom<lodZRgn()?'none':zoom<Z_ENT?'rgn':'all';
   if(lod!==curLOD){curLOD=lod;G('labels').className='lod-'+lod;}
+  syncEntryMount();
   const showGeo=zoom>=Z_GEO;
   if(showGeo!==curGeoVis) setGeoVis(showGeo);
 }
@@ -735,7 +792,7 @@ function initialView(){
   clampPan();
   scheduleRender();
 }
-function resetView(){initialView();}
+function resetView(){lastZoom=-1;initialView();}
 
 function doZoom(f,cx,cy){
   cx=cx??window.innerWidth/2;cy=cy??window.innerHeight/2;
@@ -787,6 +844,19 @@ function setupPanZoom(){
   },{passive:false});
 }
 
+function setupViewport(){
+  let resizeT;
+  window.addEventListener('resize',()=>{
+    clearTimeout(resizeT);
+    resizeT=setTimeout(()=>{
+      const mz=minZoom();
+      if(zoom<mz){zoom=mz;lastZoom=-1;}
+      clampPan();
+      scheduleRender();
+    },120);
+  });
+}
+
 /* ═══════════════════════════════════════════════════════════
    STATE POPUP
 ═══════════════════════════════════════════════════════════ */
@@ -803,7 +873,7 @@ function setupUI(){
 }
 function resetStates(){
   if(!confirm(lang==='zh'?'重置所有选择？':'Reset all selections?'))return;
-  states.fill(0);lblEls.forEach(el=>{el.dataset.s='0';});window.location.hash='';
+  states.fill(0);lblEls.forEach(el=>{if(el)el.dataset.s='0';});window.location.hash='';
 }
 function toggleLegend(){
   G('legend').classList.toggle('collapsed');
@@ -875,9 +945,10 @@ async function init(){
     try{buildLabels();}  catch(e){console.error('[Map] labels:',e);}
     try{setupTitleCard(data);}catch(e){console.error('[Map] title:',e);}
 
-    setupPanZoom();setupUI();initialView();
+    setupPanZoom();setupViewport();setupUI();initialView();
     G('loading').style.display='none';
-    console.log(`[Map] OK — ${items.length} items`);
+    const rgn=items.filter(i=>i.role==='region').length;
+    console.log(`[Map] OK — ${items.length} items, ${rgn} region labels (entries lazy)`);
   } catch(e){
     console.error(e);showError(`无法加载 "${DATA}"`,e.message);
   }
