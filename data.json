@@ -53,16 +53,13 @@
       "note": "四角坐标(%), 顺序: 左上→右上→右下→左下"
     }
   },
-  "title": {
-    "en": "A Map of the Lands of Human Sexuality",
-    "zh": "人类性癖地图",
-    "en_sub": "by Franklin Veaux",
-    "zh_sub": "作者：Franklin Veaux"
-  },
+  "_schema_version": 2,
+  "_lang_files": [
+    "lang/zh.json",
+    "lang/en.json"
+  ],
   "geographical_features": [
     {
-      "en": "Squick Peaks",
-      "zh": "下头峰",
       "type": "mountain",
       "role": "geography",
       "x1": 47.1187,
@@ -70,11 +67,10 @@
       "x2": 49.366,
       "y2": 24.1732,
       "x3": 51.191,
-      "y3": 25.309
+      "y3": 25.309,
+      "id": "geo_01"
     },
     {
-      "en": "The Impassable Reaches",
-      "zh": "不可逾越之地",
       "type": "mountain",
       "role": "geography",
       "x1": 57.1835,
@@ -82,11 +78,10 @@
       "x2": 65.0799,
       "y2": 31.9162,
       "x3": 73.8002,
-      "y3": 33.891
+      "y3": 33.891,
+      "id": "geo_02"
     },
     {
-      "en": "The Great Barrier Mountains",
-      "zh": "大隔离山脉",
       "type": "mountain",
       "role": "geography",
       "x1": 38.7669,
@@ -94,11 +89,10 @@
       "x2": 48.039,
       "y2": 62.2997,
       "x3": 58.095,
-      "y3": 65.353
+      "y3": 65.353,
+      "id": "geo_03"
     },
     {
-      "en": "Lesser Barrier Mountains",
-      "zh": "小隔离山脉",
       "type": "mountain",
       "role": "geography",
       "x1": 35.5151,
@@ -106,11 +100,10 @@
       "x2": 42.2616,
       "y2": 82.2029,
       "x3": 46.9363,
-      "y3": 81.5362
+      "y3": 81.5362,
+      "id": "geo_04"
     },
     {
-      "en": "Bay of Unawareness",
-      "zh": "无意识湾",
       "type": "bay",
       "role": "geography",
       "x1": 12.7997,
@@ -118,11 +111,10 @@
       "x2": 14.5791,
       "y2": 64.6926,
       "x3": 16.6551,
-      "y3": 64.6644
+      "y3": 64.6644,
+      "id": "geo_05"
     },
     {
-      "en": "Straits of Fear",
-      "zh": "恐惧海峡",
       "type": "strait",
       "role": "geography",
       "x1": 54.305,
@@ -130,11 +122,10 @@
       "x2": 55.7007,
       "y2": 73.5169,
       "x3": 57.673,
-      "y3": 71.0682
+      "y3": 71.0682,
+      "id": "geo_06"
     },
     {
-      "en": "Vanilla Sea",
-      "zh": "香草海",
       "type": "sea",
       "role": "geography",
       "x1": 61.9883,
@@ -142,11 +133,10 @@
       "x2": 63.7029,
       "y2": 83.6724,
       "x3": 65.8078,
-      "y3": 82.7102
+      "y3": 82.7102,
+      "id": "geo_07"
     },
     {
-      "en": "Urban Dictionary Bay",
-      "zh": "烂俗湾",
       "type": "bay",
       "role": "geography",
       "x1": 82.3645,
@@ -154,11 +144,10 @@
       "x2": 83.899,
       "y2": 27.0192,
       "x3": 86.253,
-      "y3": 27.0375
+      "y3": 27.0375,
+      "id": "geo_08"
     },
     {
-      "en": "Fisting Cove",
-      "zh": "拳交湾",
       "type": "bay",
       "role": "geography",
       "x1": 23.2212,
@@ -166,11 +155,10 @@
       "x2": 24.1945,
       "y2": 49.5247,
       "x3": 25.5197,
-      "y3": 48.6151
+      "y3": 48.6151,
+      "id": "geo_09"
     },
     {
-      "en": "Strait of Self-Loving",
-      "zh": "自爱海峡",
       "type": "strait",
       "role": "geography",
       "x1": 66.1681,
@@ -178,11 +166,10 @@
       "x2": 66.4549,
       "y2": 69.749,
       "x3": 67.2771,
-      "y3": 71.8488
+      "y3": 71.8488,
+      "id": "geo_10"
     },
     {
-      "en": "Endorphin Inlet",
-      "zh": "内啡肽河口",
       "type": "inlet",
       "role": "geography",
       "x1": 62.2051,
@@ -190,11 +177,10 @@
       "x2": 62.8863,
       "y2": 51.6315,
       "x3": 64.3785,
-      "y3": 52.344
+      "y3": 52.344,
+      "id": "geo_11"
     },
     {
-      "en": "Permanence Bay",
-      "zh": "持久海湾",
       "type": "bay",
       "role": "geography",
       "x1": 65.0922,
@@ -202,11 +188,10 @@
       "x2": 65.1571,
       "y2": 50.5798,
       "x3": 66.7791,
-      "y3": 48.8156
+      "y3": 48.8156,
+      "id": "geo_12"
     },
     {
-      "en": "Literotica Bay",
-      "zh": "黄文湾",
       "type": "bay",
       "role": "geography",
       "x1": 60.0316,
@@ -214,11 +199,10 @@
       "x2": 61.3616,
       "y2": 70.3931,
       "x3": 62.3673,
-      "y3": 71.5127
+      "y3": 71.5127,
+      "id": "geo_13"
     },
     {
-      "en": "Wall of Religious Shame",
-      "zh": "信仰羞辱之墙",
       "type": "wall",
       "role": "geography",
       "x1": 58.2083,
@@ -226,11 +210,10 @@
       "x2": 60.3939,
       "y2": 78.5622,
       "x3": 62.627,
-      "y3": 78.7113
+      "y3": 78.7113,
+      "id": "geo_14"
     },
     {
-      "en": "Bay of Repression",
-      "zh": "性压抑海湾",
       "type": "bay",
       "role": "geography",
       "x1": 57.5431,
@@ -238,11 +221,10 @@
       "x2": 59.0635,
       "y2": 83.6307,
       "x3": 60.4414,
-      "y3": 83.6804
+      "y3": 83.6804,
+      "id": "geo_15"
     },
     {
-      "en": "Sea of Conformity",
-      "zh": "合群之海",
       "type": "sea",
       "role": "geography",
       "x1": 64.0999,
@@ -250,11 +232,10 @@
       "x2": 65.5728,
       "y2": 80.9474,
       "x3": 66.7606,
-      "y3": 81.0468
+      "y3": 81.0468,
+      "id": "geo_16"
     },
     {
-      "en": "Enterprise Bay",
-      "zh": "企业湾",
       "type": "bay",
       "role": "geography",
       "x1": 77.0709,
@@ -262,11 +243,10 @@
       "x2": 78.1637,
       "y2": 63.5557,
       "x3": 79.304,
-      "y3": 63.6551
+      "y3": 63.6551,
+      "id": "geo_17"
     },
     {
-      "en": "Straits of Self-Loathing",
-      "zh": "自我厌恶海峡",
       "type": "strait",
       "role": "geography",
       "x1": 63.5772,
@@ -274,74 +254,14 @@
       "x2": 64.0049,
       "y2": 88.9972,
       "x3": 64.8601,
-      "y3": 91.0345
+      "y3": 91.0345,
+      "id": "geo_18"
     }
   ],
   "regions": [
     {
       "id": "effluvia",
-      "en": "Effluvia",
-      "zh": "体液排泄区",
       "type": "region",
-      "entries": [
-        {
-          "en": "Human Toilets",
-          "zh": "人体厕所",
-          "role": "entry",
-          "x": 0.1056,
-          "y": 0.0496
-        },
-        {
-          "en": "Felching",
-          "zh": "从阴道/肛门吸出内射的精液",
-          "role": "entry",
-          "x": 0.1025,
-          "y": 0.0465
-        },
-        {
-          "en": "Two Girls One Cup",
-          "zh": "两女一杯",
-          "note": "保留原名",
-          "role": "entry",
-          "x": 0.0938,
-          "y": 0.0538
-        },
-        {
-          "en": "Tub Girl",
-          "zh": "拉稀浴",
-          "role": "entry",
-          "x": 0.0968,
-          "y": 0.0431
-        },
-        {
-          "en": "Brown Showers",
-          "zh": "粪浴",
-          "role": "entry",
-          "x": 0.1038,
-          "y": 0.0538
-        },
-        {
-          "en": "Coprophagia",
-          "zh": "食粪癖",
-          "role": "entry",
-          "x": 0.1012,
-          "y": 0.0565
-        },
-        {
-          "en": "Golden Showers",
-          "zh": "尿浴",
-          "role": "entry",
-          "x": 0.1203,
-          "y": 0.0609
-        },
-        {
-          "en": "urinating in/soiling clothing",
-          "zh": "尿裤子",
-          "role": "entry",
-          "x": 0.116,
-          "y": 0.0499
-        }
-      ],
       "role": "region",
       "x": 41.9298,
       "y": 18.0323,
@@ -375,64 +295,61 @@
         "x": 41.9298,
         "y": 18.0323
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1056,
+          "y": 0.0496,
+          "id": "effluvia_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1025,
+          "y": 0.0465,
+          "id": "effluvia_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0938,
+          "y": 0.0538,
+          "id": "effluvia_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0968,
+          "y": 0.0431,
+          "id": "effluvia_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1038,
+          "y": 0.0538,
+          "id": "effluvia_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1012,
+          "y": 0.0565,
+          "id": "effluvia_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1203,
+          "y": 0.0609,
+          "id": "effluvia_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.116,
+          "y": 0.0499,
+          "id": "effluvia_008"
+        }
+      ]
     },
     {
       "id": "gag_fetish",
-      "en": "Gag Fetish",
-      "zh": "口塞癖好",
       "type": "region",
-      "entries": [
-        {
-          "en": "Ring Gags",
-          "zh": "口环",
-          "role": "entry",
-          "x": 0.1121,
-          "y": 0.0698
-        },
-        {
-          "en": "Spider Gags",
-          "zh": "蜘蛛塞",
-          "role": "entry",
-          "x": 0.1102,
-          "y": 0.0754
-        },
-        {
-          "en": "Pump Gags",
-          "zh": "充气塞",
-          "role": "entry",
-          "x": 0.1113,
-          "y": 0.0734
-        },
-        {
-          "en": "Ball Gags",
-          "zh": "口球",
-          "role": "entry",
-          "x": 0.1149,
-          "y": 0.0771
-        },
-        {
-          "en": "Funnel Gags",
-          "zh": "漏斗塞",
-          "role": "entry",
-          "x": 0.1093,
-          "y": 0.0784
-        },
-        {
-          "en": "Gag Kissing",
-          "zh": "口塞接吻",
-          "role": "entry",
-          "x": 0.1169,
-          "y": 0.0791
-        },
-        {
-          "en": "Mouth Taping",
-          "zh": "胶带封口",
-          "role": "entry",
-          "x": 0.1213,
-          "y": 0.0815
-        }
-      ],
       "role": "region",
       "x": 47.0024,
       "y": 28.0559,
@@ -466,14 +383,55 @@
         "x": 47.0024,
         "y": 28.0559
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1121,
+          "y": 0.0698,
+          "id": "gag_fetish_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1102,
+          "y": 0.0754,
+          "id": "gag_fetish_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1113,
+          "y": 0.0734,
+          "id": "gag_fetish_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1149,
+          "y": 0.0771,
+          "id": "gag_fetish_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1093,
+          "y": 0.0784,
+          "id": "gag_fetish_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1169,
+          "y": 0.0791,
+          "id": "gag_fetish_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1213,
+          "y": 0.0815,
+          "id": "gag_fetish_007"
+        }
+      ]
     },
     {
       "id": "infidelity",
-      "en": "Infidelity Fetish",
-      "zh": "出轨",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 41.7678,
       "y": 29.8383,
@@ -507,64 +465,12 @@
         "x": 41.7678,
         "y": 29.8383
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "role_enactment",
-      "en": "Role Enactment",
-      "zh": "角色扮演",
       "type": "region",
-      "entries": [
-        {
-          "en": "Animism District",
-          "zh": "泛灵论区",
-          "role": "entry",
-          "x": 0.0892,
-          "y": 0.0912
-        },
-        {
-          "en": "Pony Play",
-          "zh": "小马扮演",
-          "role": "entry",
-          "x": 0.0996,
-          "y": 0.094
-        },
-        {
-          "en": "Puppy Play",
-          "zh": "小狗扮演",
-          "role": "entry",
-          "x": 0.1007,
-          "y": 0.0877
-        },
-        {
-          "en": "Piggies",
-          "zh": "小猪扮演",
-          "role": "entry",
-          "x": 0.0964,
-          "y": 0.0911
-        },
-        {
-          "en": "Parent/Child",
-          "zh": "亲子扮演",
-          "role": "entry",
-          "x": 0.0952,
-          "y": 0.0984
-        },
-        {
-          "en": "Age Play",
-          "zh": "年龄扮演",
-          "role": "entry",
-          "x": 0.0932,
-          "y": 0.1048
-        },
-        {
-          "en": "Adult Baby",
-          "zh": "婴儿扮演",
-          "role": "entry",
-          "x": 0.0918,
-          "y": 0.1023
-        }
-      ],
       "role": "region",
       "x": 37.6682,
       "y": 35.3274,
@@ -598,14 +504,55 @@
         "x": 37.6682,
         "y": 35.3274
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0892,
+          "y": 0.0912,
+          "id": "role_enactment_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0996,
+          "y": 0.094,
+          "id": "role_enactment_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1007,
+          "y": 0.0877,
+          "id": "role_enactment_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0964,
+          "y": 0.0911,
+          "id": "role_enactment_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0952,
+          "y": 0.0984,
+          "id": "role_enactment_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0932,
+          "y": 0.1048,
+          "id": "role_enactment_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0918,
+          "y": 0.1023,
+          "id": "role_enactment_007"
+        }
+      ]
     },
     {
       "id": "Diaper",
-      "en": "Diaper Fetish",
-      "zh": "尿不湿癖好",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 31.8573,
       "y": 41.3976,
@@ -639,50 +586,12 @@
         "x": 31.8573,
         "y": 41.3976
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "sacred_sexuality",
-      "en": "Sacred Sexuality",
-      "zh": "神圣性爱",
       "type": "region",
-      "entries": [
-        {
-          "en": "Tantra",
-          "zh": "Tantra密宗",
-          "role": "entry",
-          "x": 0.109,
-          "y": 0.0939
-        },
-        {
-          "en": "Earth Goddess",
-          "zh": "大地女神",
-          "role": "entry",
-          "x": 0.1208,
-          "y": 0.094
-        },
-        {
-          "en": "Priestess",
-          "zh": "女祭司",
-          "role": "entry",
-          "x": 0.1228,
-          "y": 0.0969
-        },
-        {
-          "en": "Temple Whores",
-          "zh": "神庙娼妓",
-          "role": "entry",
-          "x": 0.1214,
-          "y": 0.0996
-        },
-        {
-          "en": "Sensual Healing",
-          "zh": "感官疗愈",
-          "role": "entry",
-          "x": 0.114,
-          "y": 0.0963
-        }
-      ],
       "role": "region",
       "x": 48.3862,
       "y": 34.7737,
@@ -716,14 +625,43 @@
         "x": 48.3862,
         "y": 34.7737
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.109,
+          "y": 0.0939,
+          "id": "sacred_sexuality_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1208,
+          "y": 0.094,
+          "id": "sacred_sexuality_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1228,
+          "y": 0.0969,
+          "id": "sacred_sexuality_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1214,
+          "y": 0.0996,
+          "id": "sacred_sexuality_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.114,
+          "y": 0.0963,
+          "id": "sacred_sexuality_005"
+        }
+      ]
     },
     {
       "id": "erotic_massage",
-      "en": "Erotic Massage",
-      "zh": "情色按摩",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 47.6266,
       "y": 31.4542,
@@ -757,14 +695,12 @@
         "x": 47.6266,
         "y": 31.4542
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Sexual_Surrogacy",
-      "en": "Sexual Surrogacy",
-      "zh": "性代理治疗",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 55.0755,
       "y": 31.5069,
@@ -798,14 +734,12 @@
         "x": 55.0755,
         "y": 31.5069
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": []
     },
     {
       "id": "Menstruation_Fetish",
-      "en": "Menstruation Fetish",
-      "zh": "月经癖",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 57.6145,
       "y": 35.9325,
@@ -839,50 +773,12 @@
         "x": 57.6145,
         "y": 35.9325
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": []
     },
     {
       "id": "Pumps",
-      "en": "Pumps",
-      "zh": "气泵",
       "type": "region",
-      "entries": [
-        {
-          "en": "Penis",
-          "zh": "吸阴茎",
-          "role": "entry",
-          "x": 0.1449,
-          "y": 0.0887
-        },
-        {
-          "en": "Breaats",
-          "zh": "吸奶",
-          "role": "entry",
-          "x": 0.1517,
-          "y": 0.089
-        },
-        {
-          "en": "Cupping",
-          "zh": "拔罐",
-          "role": "entry",
-          "x": 0.1481,
-          "y": 0.0856
-        },
-        {
-          "en": "Labia",
-          "zh": "吸阴唇",
-          "role": "entry",
-          "x": 0.158,
-          "y": 0.0932
-        },
-        {
-          "en": "Pussy",
-          "zh": "吸逼",
-          "role": "entry",
-          "x": 0.1586,
-          "y": 0.0905
-        }
-      ],
       "role": "region",
       "x": 61.4909,
       "y": 32.6766,
@@ -916,71 +812,43 @@
         "x": 61.4909,
         "y": 32.6766
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1449,
+          "y": 0.0887,
+          "id": "Pumps_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1517,
+          "y": 0.089,
+          "id": "Pumps_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1481,
+          "y": 0.0856,
+          "id": "Pumps_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.158,
+          "y": 0.0932,
+          "id": "Pumps_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1586,
+          "y": 0.0905,
+          "id": "Pumps_005"
+        }
+      ]
     },
     {
       "id": "voyeurism_exhibitionism",
-      "en": "Voyeurism/Exhibitionism",
-      "zh": "偷窥／暴露癖",
       "type": "region",
-      "entries": [
-        {
-          "en": "Picture Swapping",
-          "zh": "照片交换",
-          "role": "entry",
-          "x": 0.156,
-          "y": 0.0979
-        },
-        {
-          "en": "Streaking",
-          "zh": "裸奔",
-          "role": "entry",
-          "x": 0.1653,
-          "y": 0.0957
-        },
-        {
-          "en": "Flashing",
-          "zh": "闪露",
-          "role": "entry",
-          "x": 0.166,
-          "y": 0.0924
-        },
-        {
-          "en": "Same-room sex",
-          "zh": "共同性爱",
-          "role": "entry",
-          "x": 0.1771,
-          "y": 0.0936
-        },
-        {
-          "en": "Reflectoporn",
-          "zh": "对镜自拍",
-          "role": "entry",
-          "x": 0.175,
-          "y": 0.098
-        },
-        {
-          "en": "Making Movies",
-          "zh": "自制影片",
-          "role": "entry",
-          "x": 0.1772,
-          "y": 0.1005
-        },
-        {
-          "en": "Webcam sex",
-          "zh": "摄像头性爱",
-          "role": "entry",
-          "x": 0.1823,
-          "y": 0.1031
-        },
-        {
-          "en": "Dogging",
-          "zh": "公众展示／观看",
-          "role": "entry",
-          "x": 0.1829,
-          "y": 0.0975
-        }
-      ],
       "role": "region",
       "x": 69.2884,
       "y": 36.6346,
@@ -1014,57 +882,61 @@
         "x": 69.2884,
         "y": 36.6346
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.156,
+          "y": 0.0979,
+          "id": "voyeurism_exhibitionism_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1653,
+          "y": 0.0957,
+          "id": "voyeurism_exhibitionism_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.166,
+          "y": 0.0924,
+          "id": "voyeurism_exhibitionism_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1771,
+          "y": 0.0936,
+          "id": "voyeurism_exhibitionism_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.175,
+          "y": 0.098,
+          "id": "voyeurism_exhibitionism_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1772,
+          "y": 0.1005,
+          "id": "voyeurism_exhibitionism_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1823,
+          "y": 0.1031,
+          "id": "voyeurism_exhibitionism_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1829,
+          "y": 0.0975,
+          "id": "voyeurism_exhibitionism_008"
+        }
+      ]
     },
     {
       "id": "gender_orientation_identity",
-      "en": "Gender and Orientation Identity",
-      "zh": "性别与性取向认同",
       "type": "region",
-      "entries": [
-        {
-          "en": "Shemales",
-          "zh": "人妖",
-          "role": "entry",
-          "x": 0.1496,
-          "y": 0.1056
-        },
-        {
-          "en": "Sex With Transexuals",
-          "zh": "跨性别",
-          "role": "entry",
-          "x": 0.1581,
-          "y": 0.1092
-        },
-        {
-          "en": "Sex With Hermaphrodites",
-          "zh": "双性人",
-          "role": "entry",
-          "x": 0.1529,
-          "y": 0.1115
-        },
-        {
-          "en": "Orientation Play",
-          "zh": "性取向扮演",
-          "role": "entry",
-          "x": 0.1521,
-          "y": 0.1141
-        },
-        {
-          "en": "Packing",
-          "zh": "假鼓包",
-          "role": "entry",
-          "x": 0.1701,
-          "y": 0.111
-        },
-        {
-          "en": "Forced Feminization",
-          "zh": "强制娘化",
-          "role": "entry",
-          "x": 0.1667,
-          "y": 0.1137
-        }
-      ],
       "role": "region",
       "x": 60.5677,
       "y": 40.1611,
@@ -1098,36 +970,49 @@
         "x": 60.5677,
         "y": 40.1611
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1496,
+          "y": 0.1056,
+          "id": "gender_orientation_identity_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1581,
+          "y": 0.1092,
+          "id": "gender_orientation_identity_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1529,
+          "y": 0.1115,
+          "id": "gender_orientation_identity_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1521,
+          "y": 0.1141,
+          "id": "gender_orientation_identity_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1701,
+          "y": 0.111,
+          "id": "gender_orientation_identity_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1667,
+          "y": 0.1137,
+          "id": "gender_orientation_identity_006"
+        }
+      ]
     },
     {
       "id": "Sitophilia",
-      "en": "Sitophilia",
-      "zh": "食物游戏",
       "type": "region",
-      "entries": [
-        {
-          "en": "Honey",
-          "zh": "蜂蜜",
-          "role": "entry",
-          "x": 0.1493,
-          "y": 0.1169
-        },
-        {
-          "en": "Popping Candy",
-          "zh": "跳跳糖",
-          "role": "entry",
-          "x": 0.1553,
-          "y": 0.1158
-        },
-        {
-          "en": "Nyotaimori",
-          "zh": "女体盛",
-          "role": "entry",
-          "x": 0.1535,
-          "y": 0.1194
-        }
-      ],
       "role": "region",
       "x": 61.9054,
       "y": 43.3916,
@@ -1161,85 +1046,31 @@
         "x": 61.9054,
         "y": 43.3916
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1493,
+          "y": 0.1169,
+          "id": "Sitophilia_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1553,
+          "y": 0.1158,
+          "id": "Sitophilia_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1535,
+          "y": 0.1194,
+          "id": "Sitophilia_003"
+        }
+      ]
     },
     {
       "id": "dangerous_games",
-      "en": "Dangerous Games",
-      "zh": "危险游戏",
       "type": "region",
-      "entries": [
-        {
-          "en": "Fire Play",
-          "zh": "火烧威胁",
-          "role": "entry",
-          "x": 0.128,
-          "y": 0.1076
-        },
-        {
-          "en": "Breath Control",
-          "zh": "呼吸控制",
-          "role": "entry",
-          "x": 0.1257,
-          "y": 0.1151
-        },
-        {
-          "en": "Choking",
-          "zh": "卡脖子",
-          "role": "entry",
-          "x": 0.1247,
-          "y": 0.1205
-        },
-        {
-          "en": "Autoerotic Asphyxia",
-          "zh": "自我窒息",
-          "role": "entry",
-          "x": 0.1293,
-          "y": 0.1188
-        },
-        {
-          "en": "Immersion/Drowning",
-          "zh": "浸没／溺水",
-          "role": "entry",
-          "x": 0.1286,
-          "y": 0.124
-        },
-        {
-          "en": "Play Piercing",
-          "zh": "即兴穿刺",
-          "role": "entry",
-          "x": 0.1475,
-          "y": 0.1269
-        },
-        {
-          "en": "Corset Piercing",
-          "zh": "胸衣穿刺",
-          "role": "entry",
-          "x": 0.14,
-          "y": 0.1254
-        },
-        {
-          "en": "Suturing",
-          "zh": "皮肤缝合",
-          "role": "entry",
-          "x": 0.1392,
-          "y": 0.1223
-        },
-        {
-          "en": "Gun Play",
-          "zh": "枪械威胁",
-          "role": "entry",
-          "x": 0.1392,
-          "y": 0.1178
-        },
-        {
-          "en": "Blood Play",
-          "zh": "流血癖好",
-          "role": "entry",
-          "x": 0.1455,
-          "y": 0.1186
-        }
-      ],
       "role": "region",
       "x": 53.2632,
       "y": 43.349,
@@ -1273,64 +1104,73 @@
         "x": 53.2632,
         "y": 43.349
       },
-      "fontSize": 13
+      "fontSize": 13,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.128,
+          "y": 0.1076,
+          "id": "dangerous_games_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1257,
+          "y": 0.1151,
+          "id": "dangerous_games_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1247,
+          "y": 0.1205,
+          "id": "dangerous_games_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1293,
+          "y": 0.1188,
+          "id": "dangerous_games_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1286,
+          "y": 0.124,
+          "id": "dangerous_games_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1475,
+          "y": 0.1269,
+          "id": "dangerous_games_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.14,
+          "y": 0.1254,
+          "id": "dangerous_games_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1392,
+          "y": 0.1223,
+          "id": "dangerous_games_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1392,
+          "y": 0.1178,
+          "id": "dangerous_games_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.1455,
+          "y": 0.1186,
+          "id": "dangerous_games_010"
+        }
+      ]
     },
     {
       "id": "Body_Fluid",
-      "en": "Body Fluid",
-      "zh": "体液癖",
       "type": "region",
-      "entries": [
-        {
-          "en": "Lactation Fetish",
-          "zh": "乳液",
-          "role": "entry",
-          "x": 0.1172,
-          "y": 0.1098
-        },
-        {
-          "en": "Bukkake",
-          "zh": "双颜射",
-          "role": "entry",
-          "x": 0.1091,
-          "y": 0.1129
-        },
-        {
-          "en": "Snowballing",
-          "zh": "口口传精",
-          "role": "entry",
-          "x": 0.1072,
-          "y": 0.115
-        },
-        {
-          "en": "Used Condoms",
-          "zh": "二手避孕套",
-          "role": "entry",
-          "x": 0.1066,
-          "y": 0.1184
-        },
-        {
-          "en": "Funneling",
-          "zh": "漏斗灌注",
-          "role": "entry",
-          "x": 0.1152,
-          "y": 0.1175
-        },
-        {
-          "en": "Cum Fetish",
-          "zh": "精液恋",
-          "role": "entry",
-          "x": 0.1139,
-          "y": 0.1202
-        },
-        {
-          "en": "Cum Eating",
-          "zh": "吃精",
-          "role": "entry",
-          "x": 0.1057,
-          "y": 0.1229
-        }
-      ],
       "role": "region",
       "x": 45.1589,
       "y": 40.5858,
@@ -1364,14 +1204,55 @@
         "x": 45.1589,
         "y": 40.5858
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1172,
+          "y": 0.1098,
+          "id": "Body_Fluid_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1091,
+          "y": 0.1129,
+          "id": "Body_Fluid_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1072,
+          "y": 0.115,
+          "id": "Body_Fluid_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1066,
+          "y": 0.1184,
+          "id": "Body_Fluid_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1152,
+          "y": 0.1175,
+          "id": "Body_Fluid_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1139,
+          "y": 0.1202,
+          "id": "Body_Fluid_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1057,
+          "y": 0.1229,
+          "id": "Body_Fluid_007"
+        }
+      ]
     },
     {
       "id": "catheterization",
-      "en": "Catheterization Sounding",
-      "zh": "导尿管",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 45.9168,
       "y": 45.8656,
@@ -1405,78 +1286,12 @@
         "x": 45.9168,
         "y": 45.8656
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "body_part_fetish",
-      "en": "Body Part Fetish",
-      "zh": "身体部位恋",
       "type": "region",
-      "entries": [
-        {
-          "en": "Cunt Worship",
-          "zh": "阴户崇拜",
-          "role": "entry",
-          "x": 0.0914,
-          "y": 0.1093
-        },
-        {
-          "en": "Cock Worship",
-          "zh": "阳具崇拜",
-          "role": "entry",
-          "x": 0.0898,
-          "y": 0.1123
-        },
-        {
-          "en": "Nose Fetish",
-          "zh": "恋鼻",
-          "role": "entry",
-          "x": 0.09,
-          "y": 0.1156
-        },
-        {
-          "en": "Fingernails",
-          "zh": "恋指甲",
-          "role": "entry",
-          "x": 0.0921,
-          "y": 0.1186
-        },
-        {
-          "en": "Hand Fetish",
-          "zh": "恋手",
-          "role": "entry",
-          "x": 0.0992,
-          "y": 0.1147
-        },
-        {
-          "en": "Hair Fetish",
-          "zh": "恋发",
-          "role": "entry",
-          "x": 0.0989,
-          "y": 0.1168
-        },
-        {
-          "en": "Leg Fetish",
-          "zh": "恋腿",
-          "role": "entry",
-          "x": 0.0986,
-          "y": 0.1198
-        },
-        {
-          "en": "Elbow Fetish",
-          "zh": "恋肘",
-          "role": "entry",
-          "x": 0.0925,
-          "y": 0.1218
-        },
-        {
-          "en": "Foot Fetish",
-          "zh": "恋足",
-          "role": "entry",
-          "x": 0.0973,
-          "y": 0.124
-        }
-      ],
       "role": "region",
       "x": 38.6257,
       "y": 42.0156,
@@ -1510,85 +1325,67 @@
         "x": 38.6257,
         "y": 42.0156
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0914,
+          "y": 0.1093,
+          "id": "body_part_fetish_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0898,
+          "y": 0.1123,
+          "id": "body_part_fetish_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.09,
+          "y": 0.1156,
+          "id": "body_part_fetish_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0921,
+          "y": 0.1186,
+          "id": "body_part_fetish_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0992,
+          "y": 0.1147,
+          "id": "body_part_fetish_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0989,
+          "y": 0.1168,
+          "id": "body_part_fetish_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0986,
+          "y": 0.1198,
+          "id": "body_part_fetish_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0925,
+          "y": 0.1218,
+          "id": "body_part_fetish_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.0973,
+          "y": 0.124,
+          "id": "body_part_fetish_009"
+        }
+      ]
     },
     {
       "id": "penetration_fetish",
-      "en": "Penetration Fetish",
-      "zh": "插入恋",
       "type": "region",
-      "entries": [
-        {
-          "en": "Triple Penetration",
-          "zh": "三洞同插",
-          "role": "entry",
-          "x": 0.0697,
-          "y": 0.1257
-        },
-        {
-          "en": "Double Penetration",
-          "zh": "双洞同插",
-          "role": "entry",
-          "x": 0.0784,
-          "y": 0.1289
-        },
-        {
-          "en": "Anal Fisting",
-          "zh": "肛门拳交",
-          "role": "entry",
-          "x": 0.0684,
-          "y": 0.1328
-        },
-        {
-          "en": "Vaginal Fisting",
-          "zh": "阴道拳交",
-          "role": "entry",
-          "x": 0.0678,
-          "y": 0.1383
-        },
-        {
-          "en": "Strap-In",
-          "zh": "固定插入",
-          "role": "entry",
-          "x": 0.086,
-          "y": 0.1264
-        },
-        {
-          "en": "Huge Dildos",
-          "zh": "巨型假几把",
-          "role": "entry",
-          "x": 0.0778,
-          "y": 0.1357
-        },
-        {
-          "en": "Inflatables",
-          "zh": "充气肛塞",
-          "role": "entry",
-          "x": 1.6853,
-          "y": 2.6682
-        },
-        {
-          "en": "Egg Laying",
-          "zh": "产卵",
-          "role": "entry",
-          "x": 0.0839,
-          "y": 0.1372
-        },
-        {
-          "en": "Enema",
-          "zh": "灌肠",
-          "role": "entry",
-          "x": 0.0767,
-          "y": 0.1405
-        },
-        {
-          "en": "Goastse",
-          "zh": "扩肛",
-          "role": "entry",
-          "x": 1.2949,
-          "y": 2.4759
-        }
-      ],
       "role": "region",
       "x": 30.0431,
       "y": 47.2405,
@@ -1622,36 +1419,73 @@
         "x": 30.0431,
         "y": 47.2405
       },
-      "fontSize": 13
+      "fontSize": 13,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0697,
+          "y": 0.1257,
+          "id": "penetration_fetish_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0784,
+          "y": 0.1289,
+          "id": "penetration_fetish_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0684,
+          "y": 0.1328,
+          "id": "penetration_fetish_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0678,
+          "y": 0.1383,
+          "id": "penetration_fetish_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.086,
+          "y": 0.1264,
+          "id": "penetration_fetish_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0778,
+          "y": 0.1357,
+          "id": "penetration_fetish_006"
+        },
+        {
+          "role": "entry",
+          "x": 1.6853,
+          "y": 2.6682,
+          "id": "penetration_fetish_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0839,
+          "y": 0.1372,
+          "id": "penetration_fetish_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.0767,
+          "y": 0.1405,
+          "id": "penetration_fetish_009"
+        },
+        {
+          "role": "entry",
+          "x": 1.2949,
+          "y": 2.4759,
+          "id": "penetration_fetish_010"
+        }
+      ]
     },
     {
       "id": "chemical_play",
-      "en": "Chemical Play",
-      "zh": "化学刺激游戏",
       "type": "region",
-      "entries": [
-        {
-          "en": "Mentol Toothpaste",
-          "zh": "薄荷牙膏",
-          "role": "entry",
-          "x": 0.0986,
-          "y": 0.1288
-        },
-        {
-          "en": "Bengay",
-          "zh": "镇痛乳膏",
-          "role": "entry",
-          "x": 0.0915,
-          "y": 0.131
-        },
-        {
-          "en": "Capsacin",
-          "zh": "辣椒油",
-          "role": "entry",
-          "x": 0.0877,
-          "y": 0.1307
-        }
-      ],
       "role": "region",
       "x": 37.6801,
       "y": 47.7048,
@@ -1685,14 +1519,31 @@
         "x": 37.6801,
         "y": 47.7048
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0986,
+          "y": 0.1288,
+          "id": "chemical_play_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0915,
+          "y": 0.131,
+          "id": "chemical_play_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0877,
+          "y": 0.1307,
+          "id": "chemical_play_003"
+        }
+      ]
     },
     {
       "id": "Figging",
-      "en": "Figging",
-      "zh": "姜刑",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 36.0628,
       "y": 50.1659,
@@ -1726,43 +1577,12 @@
         "x": 36.0628,
         "y": 50.1659
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "sex_games",
-      "en": "Sex Games",
-      "zh": "性爱游戏",
       "type": "region",
-      "entries": [
-        {
-          "en": "Spin the Bottle",
-          "zh": "转瓶子",
-          "role": "entry",
-          "x": 0.087,
-          "y": 0.1436
-        },
-        {
-          "en": "Strip Poker",
-          "zh": "情色纸牌",
-          "role": "entry",
-          "x": 0.0844,
-          "y": 0.1456
-        },
-        {
-          "en": "Truth or Dare",
-          "zh": "真心话大冒险",
-          "role": "entry",
-          "x": 0.0896,
-          "y": 0.1474
-        },
-        {
-          "en": "Bliss/Onyx",
-          "zh": "成人大富翁",
-          "role": "entry",
-          "x": 0.0847,
-          "y": 0.1499
-        }
-      ],
       "role": "region",
       "x": 35.2994,
       "y": 53.5359,
@@ -1796,36 +1616,37 @@
         "x": 35.2994,
         "y": 53.5359
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.087,
+          "y": 0.1436,
+          "id": "sex_games_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0844,
+          "y": 0.1456,
+          "id": "sex_games_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0896,
+          "y": 0.1474,
+          "id": "sex_games_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0847,
+          "y": 0.1499,
+          "id": "sex_games_004"
+        }
+      ]
     },
     {
       "id": "sensory_deprivation",
-      "en": "Sensory Deprivation",
-      "zh": "感官剥夺",
       "type": "region",
-      "entries": [
-        {
-          "en": "Hoods",
-          "zh": "头罩",
-          "role": "entry",
-          "x": 0.0988,
-          "y": 0.1324
-        },
-        {
-          "en": "Blindfolds",
-          "zh": "眼罩",
-          "role": "entry",
-          "x": 0.0961,
-          "y": 0.1346
-        },
-        {
-          "en": "Ear Plug",
-          "zh": "耳塞",
-          "role": "entry",
-          "x": 0.0955,
-          "y": 0.1398
-        }
-      ],
       "role": "region",
       "x": 39.4926,
       "y": 50.4196,
@@ -1859,36 +1680,31 @@
         "x": 39.4926,
         "y": 50.4196
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0988,
+          "y": 0.1324,
+          "id": "sensory_deprivation_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0961,
+          "y": 0.1346,
+          "id": "sensory_deprivation_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0955,
+          "y": 0.1398,
+          "id": "sensory_deprivation_003"
+        }
+      ]
     },
     {
       "id": "writing",
-      "en": "Writing",
-      "zh": "情色写作",
       "type": "region",
-      "entries": [
-        {
-          "en": "Fiction",
-          "zh": "情色小说",
-          "role": "entry",
-          "x": 0.0938,
-          "y": 0.1469
-        },
-        {
-          "en": "Texting",
-          "zh": "聊骚",
-          "role": "entry",
-          "x": 0.0948,
-          "y": 0.1501
-        },
-        {
-          "en": "Sex Blogging",
-          "zh": "性爱记录",
-          "role": "entry",
-          "x": 0.0999,
-          "y": 0.1461
-        }
-      ],
       "role": "region",
       "x": 39.0566,
       "y": 53.8852,
@@ -1922,71 +1738,31 @@
         "x": 39.0566,
         "y": 53.8852
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0938,
+          "y": 0.1469,
+          "id": "writing_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0948,
+          "y": 0.1501,
+          "id": "writing_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0999,
+          "y": 0.1461,
+          "id": "writing_003"
+        }
+      ]
     },
     {
       "id": "medical_fetish",
-      "en": "Medical Fetish",
-      "zh": "医疗癖好",
       "type": "region",
-      "entries": [
-        {
-          "en": "Medical Appliances",
-          "zh": "医疗器械",
-          "role": "entry",
-          "x": 0.0762,
-          "y": 0.1477
-        },
-        {
-          "en": "Exam Tables",
-          "zh": "检查台",
-          "role": "entry",
-          "x": 0.0783,
-          "y": 0.1517
-        },
-        {
-          "en": "Abasiophilia",
-          "zh": "恋残",
-          "role": "entry",
-          "x": 0.0762,
-          "y": 0.1546
-        },
-        {
-          "en": "Dental",
-          "zh": "牙科",
-          "role": "entry",
-          "x": 0.0708,
-          "y": 0.1533
-        },
-        {
-          "en": "Douching",
-          "zh": "阴道冲洗",
-          "role": "entry",
-          "x": 0.0686,
-          "y": 0.1581
-        },
-        {
-          "en": "Gyno",
-          "zh": "妇科",
-          "role": "entry",
-          "x": 0.0693,
-          "y": 0.1615
-        },
-        {
-          "en": "Speculums",
-          "zh": "窥阴器",
-          "role": "entry",
-          "x": 0.0708,
-          "y": 0.1642
-        },
-        {
-          "en": "Enema",
-          "zh": "灌肠",
-          "role": "entry",
-          "x": 0.07,
-          "y": 0.1674
-        }
-      ],
       "role": "region",
       "x": 29.9751,
       "y": 56.6799,
@@ -2020,14 +1796,61 @@
         "x": 29.9751,
         "y": 56.6799
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0762,
+          "y": 0.1477,
+          "id": "medical_fetish_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0783,
+          "y": 0.1517,
+          "id": "medical_fetish_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0762,
+          "y": 0.1546,
+          "id": "medical_fetish_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0708,
+          "y": 0.1533,
+          "id": "medical_fetish_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0686,
+          "y": 0.1581,
+          "id": "medical_fetish_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0693,
+          "y": 0.1615,
+          "id": "medical_fetish_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0708,
+          "y": 0.1642,
+          "id": "medical_fetish_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.07,
+          "y": 0.1674,
+          "id": "medical_fetish_008"
+        }
+      ]
     },
     {
       "id": "strap_on",
-      "en": "Strap On Sex",
-      "zh": "穿戴型",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 35.4913,
       "y": 56.7989,
@@ -2061,36 +1884,12 @@
         "x": 35.4913,
         "y": 56.7989
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Electrical",
-      "en": "Electrical",
-      "zh": "电击",
       "type": "region",
-      "entries": [
-        {
-          "en": "Crank Generator",
-          "zh": "手摇电击",
-          "role": "entry",
-          "x": 0.0792,
-          "y": 0.16
-        },
-        {
-          "en": "Violet Wands",
-          "zh": "静电棒",
-          "role": "entry",
-          "x": 0.0762,
-          "y": 0.1619
-        },
-        {
-          "en": "TENS",
-          "zh": "电脉冲贴",
-          "role": "entry",
-          "x": 0.0818,
-          "y": 0.1645
-        }
-      ],
       "role": "region",
       "x": 31.93,
       "y": 59.3989,
@@ -2124,71 +1923,31 @@
         "x": 31.93,
         "y": 59.3989
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0792,
+          "y": 0.16,
+          "id": "Electrical_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0762,
+          "y": 0.1619,
+          "id": "Electrical_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0818,
+          "y": 0.1645,
+          "id": "Electrical_003"
+        }
+      ]
     },
     {
       "id": "sensation_play",
-      "en": "Sensation Play",
-      "zh": "感官游戏",
       "type": "region",
-      "entries": [
-        {
-          "en": "Ice",
-          "zh": "冰",
-          "role": "entry",
-          "x": 0.1093,
-          "y": 0.1827
-        },
-        {
-          "en": "Fur",
-          "zh": "皮毛",
-          "role": "entry",
-          "x": 0.1076,
-          "y": 0.1849
-        },
-        {
-          "en": "Silk",
-          "zh": "丝绸",
-          "role": "entry",
-          "x": 0.1101,
-          "y": 0.1855
-        },
-        {
-          "en": "Abrasion",
-          "zh": "磨皮",
-          "role": "entry",
-          "x": 0.1029,
-          "y": 0.1896
-        },
-        {
-          "en": "Hot Wax",
-          "zh": "滴蜡",
-          "role": "entry",
-          "x": 0.1002,
-          "y": 0.1912
-        },
-        {
-          "en": "French Ticklers",
-          "zh": "狼牙套",
-          "role": "entry",
-          "x": 0.1068,
-          "y": 0.1929
-        },
-        {
-          "en": "Wartenberg Wheels",
-          "zh": "棘轮",
-          "role": "entry",
-          "x": 0.0998,
-          "y": 0.1946
-        },
-        {
-          "en": "Feathers",
-          "zh": "羽毛",
-          "role": "entry",
-          "x": 0.0984,
-          "y": 0.1965
-        }
-      ],
       "role": "region",
       "x": 41.8987,
       "y": 70.4116,
@@ -2222,99 +1981,61 @@
         "x": 41.8987,
         "y": 70.4116
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1093,
+          "y": 0.1827,
+          "id": "sensation_play_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1076,
+          "y": 0.1849,
+          "id": "sensation_play_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1101,
+          "y": 0.1855,
+          "id": "sensation_play_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1029,
+          "y": 0.1896,
+          "id": "sensation_play_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1002,
+          "y": 0.1912,
+          "id": "sensation_play_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1068,
+          "y": 0.1929,
+          "id": "sensation_play_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0998,
+          "y": 0.1946,
+          "id": "sensation_play_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0984,
+          "y": 0.1965,
+          "id": "sensation_play_008"
+        }
+      ]
     },
     {
       "id": "SM_impact_play",
-      "en": "Impact Play",
-      "zh": "SM-击打",
       "type": "region",
-      "entries": [
-        {
-          "en": "Singletail",
-          "zh": "单股鞭",
-          "role": "entry",
-          "x": 0.1066,
-          "y": 0.1266
-        },
-        {
-          "en": "Caning",
-          "zh": "藤条抽打",
-          "role": "entry",
-          "x": 0.1084,
-          "y": 0.1295
-        },
-        {
-          "en": "Paddling",
-          "zh": "木板",
-          "role": "entry",
-          "x": 0.1151,
-          "y": 0.128
-        },
-        {
-          "en": "Bastinado",
-          "zh": "杖脚底",
-          "role": "entry",
-          "x": 0.1139,
-          "y": 0.1307
-        },
-        {
-          "en": "Cropping",
-          "zh": "骑马鞭",
-          "role": "entry",
-          "x": 0.1197,
-          "y": 0.132
-        },
-        {
-          "en": "Spanking",
-          "zh": "打屁股",
-          "role": "entry",
-          "x": 0.1212,
-          "y": 0.1342
-        },
-        {
-          "en": "Strapping",
-          "zh": "皮带打",
-          "role": "entry",
-          "x": 0.1192,
-          "y": 0.1364
-        },
-        {
-          "en": "Flogging",
-          "zh": "鞭打",
-          "role": "entry",
-          "x": 0.1072,
-          "y": 0.1371
-        },
-        {
-          "en": "Dread Koosh Flogger",
-          "zh": "散鞭",
-          "role": "entry",
-          "x": 0.1056,
-          "y": 0.1338
-        },
-        {
-          "en": "Florentine",
-          "zh": "双持鞭打",
-          "role": "entry",
-          "x": 0.1064,
-          "y": 0.1397
-        },
-        {
-          "en": "Fire Whip",
-          "zh": "火鞭",
-          "role": "entry",
-          "x": 0.1051,
-          "y": 0.1438
-        },
-        {
-          "en": "Punching",
-          "zh": "拳击",
-          "role": "entry",
-          "x": 0.1583,
-          "y": 0.1503
-        }
-      ],
       "role": "region",
       "x": 46.0649,
       "y": 49.5324,
@@ -2348,43 +2069,85 @@
         "x": 46.0649,
         "y": 49.5324
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1066,
+          "y": 0.1266,
+          "id": "SM_impact_play_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1084,
+          "y": 0.1295,
+          "id": "SM_impact_play_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1151,
+          "y": 0.128,
+          "id": "SM_impact_play_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1139,
+          "y": 0.1307,
+          "id": "SM_impact_play_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1197,
+          "y": 0.132,
+          "id": "SM_impact_play_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1212,
+          "y": 0.1342,
+          "id": "SM_impact_play_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1192,
+          "y": 0.1364,
+          "id": "SM_impact_play_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1072,
+          "y": 0.1371,
+          "id": "SM_impact_play_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1056,
+          "y": 0.1338,
+          "id": "SM_impact_play_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.1064,
+          "y": 0.1397,
+          "id": "SM_impact_play_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.1051,
+          "y": 0.1438,
+          "id": "SM_impact_play_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.1583,
+          "y": 0.1503,
+          "id": "SM_impact_play_012"
+        }
+      ]
     },
     {
       "id": "SM_body_part_torture",
-      "en": "Body Part Torture",
-      "zh": "SM-身体部位施虐",
       "type": "region",
-      "entries": [
-        {
-          "en": "Cock and Ball Torture",
-          "zh": "阴茎睾丸施虐",
-          "role": "entry",
-          "x": 0.1158,
-          "y": 0.1428
-        },
-        {
-          "en": "Cunt Torture",
-          "zh": "阴户施虐",
-          "role": "entry",
-          "x": 0.1186,
-          "y": 0.1448
-        },
-        {
-          "en": "Ass Spreading",
-          "zh": "掰屁股",
-          "role": "entry",
-          "x": 0.11,
-          "y": 0.1437
-        },
-        {
-          "en": "Tit Torture",
-          "zh": "乳房施虐",
-          "role": "entry",
-          "x": 0.1187,
-          "y": 0.1473
-        }
-      ],
       "role": "region",
       "x": 47.0297,
       "y": 53.0802,
@@ -2418,71 +2181,37 @@
         "x": 47.0297,
         "y": 53.0802
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1158,
+          "y": 0.1428,
+          "id": "SM_body_part_torture_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1186,
+          "y": 0.1448,
+          "id": "SM_body_part_torture_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.11,
+          "y": 0.1437,
+          "id": "SM_body_part_torture_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1187,
+          "y": 0.1473,
+          "id": "SM_body_part_torture_004"
+        }
+      ]
     },
     {
       "id": "SM_sadomasochism",
-      "en": "Sadomasochism",
-      "zh": "SM-恋痛",
       "type": "region",
-      "entries": [
-        {
-          "en": "Weights",
-          "zh": "重物拉扯",
-          "role": "entry",
-          "x": 0.133,
-          "y": 0.1292
-        },
-        {
-          "en": "Nipple Clamps",
-          "zh": "乳夹",
-          "role": "entry",
-          "x": 0.1366,
-          "y": 0.1316
-        },
-        {
-          "en": "Clit Clamping",
-          "zh": "阴蒂夹",
-          "role": "entry",
-          "x": 0.1368,
-          "y": 0.1336
-        },
-        {
-          "en": "Milking",
-          "zh": "强制榨精",
-          "role": "entry",
-          "x": 0.1486,
-          "y": 0.1298
-        },
-        {
-          "en": "Needle Play",
-          "zh": "针刑",
-          "role": "entry",
-          "x": 0.1452,
-          "y": 0.1329
-        },
-        {
-          "en": "Knife Play",
-          "zh": "刀具威胁",
-          "role": "entry",
-          "x": 0.1521,
-          "y": 0.1408
-        },
-        {
-          "en": "Face Slapping",
-          "zh": "打脸",
-          "role": "entry",
-          "x": 0.1569,
-          "y": 0.1455
-        },
-        {
-          "en": "Hair Pulling",
-          "zh": "扯头发",
-          "role": "entry",
-          "x": 0.1575,
-          "y": 0.1479
-        }
-      ],
       "role": "region",
       "x": 59.1743,
       "y": 50.4758,
@@ -2516,14 +2245,61 @@
         "x": 59.1743,
         "y": 50.4758
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.133,
+          "y": 0.1292,
+          "id": "SM_sadomasochism_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1366,
+          "y": 0.1316,
+          "id": "SM_sadomasochism_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1368,
+          "y": 0.1336,
+          "id": "SM_sadomasochism_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1486,
+          "y": 0.1298,
+          "id": "SM_sadomasochism_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1452,
+          "y": 0.1329,
+          "id": "SM_sadomasochism_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1521,
+          "y": 0.1408,
+          "id": "SM_sadomasochism_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1569,
+          "y": 0.1455,
+          "id": "SM_sadomasochism_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1575,
+          "y": 0.1479,
+          "id": "SM_sadomasochism_008"
+        }
+      ]
     },
     {
       "id": "Flesh_Hook",
-      "en": "Flesh Hook",
-      "zh": "肉勾",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 50.422,
       "y": 55.0697,
@@ -2557,14 +2333,12 @@
         "x": 50.422,
         "y": 55.0697
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "resistance_play",
-      "en": "Resistance Play",
-      "zh": "抵抗游戏",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 53.5213,
       "y": 52.8547,
@@ -2598,14 +2372,12 @@
         "x": 53.5213,
         "y": 52.8547
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Dacrylagnia",
-      "en": "Dacrylagnia",
-      "zh": "恋哭",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 58.0311,
       "y": 52.337,
@@ -2639,169 +2411,12 @@
         "x": 58.0311,
         "y": 52.337
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "land_of_ds",
-      "en": "The Land of D/S",
-      "zh": "主奴之地",
       "type": "region",
-      "entries": [
-        {
-          "en": "Erotic Mind Control",
-          "zh": "情色洗脑",
-          "role": "entry",
-          "x": 0.0884,
-          "y": 0.1594
-        },
-        {
-          "en": "Financial Domination",
-          "zh": "经济控制",
-          "role": "entry",
-          "x": 0.088,
-          "y": 0.1648
-        },
-        {
-          "en": "Internal Enslavement",
-          "zh": "奴隶内化",
-          "role": "entry",
-          "x": 0.0944,
-          "y": 0.1586
-        },
-        {
-          "en": "Forced Orgasm",
-          "zh": "强制高潮",
-          "role": "entry",
-          "x": 0.1017,
-          "y": 0.151
-        },
-        {
-          "en": "Orgasm Denial",
-          "zh": "高潮控制",
-          "role": "entry",
-          "x": 0.1107,
-          "y": 0.1497
-        },
-        {
-          "en": "24/7 Master/Slave D/S",
-          "zh": "全时主奴",
-          "role": "entry",
-          "x": 0.1134,
-          "y": 0.1532
-        },
-        {
-          "en": "Utility D/S",
-          "zh": "生活控制",
-          "role": "entry",
-          "x": 0.0955,
-          "y": 0.1662
-        },
-        {
-          "en": "Human Furniture",
-          "zh": "人体家具",
-          "role": "entry",
-          "x": 0.096,
-          "y": 0.1722
-        },
-        {
-          "en": "Service Submission",
-          "zh": "家务奴",
-          "role": "entry",
-          "x": 0.1015,
-          "y": 0.1619
-        },
-        {
-          "en": "Slave Auction",
-          "zh": "奴隶拍卖",
-          "role": "entry",
-          "x": 0.1014,
-          "y": 0.167
-        },
-        {
-          "en": "Brat Play",
-          "zh": "叛逆奴",
-          "role": "entry",
-          "x": 0.1031,
-          "y": 0.1701
-        },
-        {
-          "en": "Gorean",
-          "zh": "Gorean式主奴",
-          "role": "entry",
-          "x": 0.1091,
-          "y": 0.1608
-        },
-        {
-          "en": "Daddy/Girl Daddy/Boy",
-          "zh": "父女/父子",
-          "role": "entry",
-          "x": 0.1094,
-          "y": 0.1653
-        },
-        {
-          "en": "Chastity Belt",
-          "zh": "贞操带",
-          "role": "entry",
-          "x": 0.1163,
-          "y": 0.1589
-        },
-        {
-          "en": "FemDom",
-          "zh": "女性主导",
-          "role": "entry",
-          "x": 0.1176,
-          "y": 0.1647
-        },
-        {
-          "en": "Old Leather",
-          "zh": "古典体制",
-          "role": "entry",
-          "x": 0.1241,
-          "y": 0.1559
-        },
-        {
-          "en": "New Leather",
-          "zh": "自由体制",
-          "role": "entry",
-          "x": 0.128,
-          "y": 0.1643
-        },
-        {
-          "en": "Chat Room D/S",
-          "zh": "线上调教",
-          "role": "entry",
-          "x": 0.1154,
-          "y": 0.1819
-        },
-        {
-          "en": "Scene D/S",
-          "zh": "场景主奴",
-          "role": "entry",
-          "x": 0.123,
-          "y": 0.1782
-        },
-        {
-          "en": "MaleDom",
-          "zh": "男性主导",
-          "role": "entry",
-          "x": 0.1289,
-          "y": 0.1816
-        },
-        {
-          "en": "K9",
-          "zh": "犬化训练",
-          "role": "entry",
-          "x": 0.12,
-          "y": 0.1775
-        },
-        {
-          "en": "Bear/Cub",
-          "zh": "熊/仔",
-          "role": "entry",
-          "x": 0.1274,
-          "y": 0.1757
-        }
-      ],
       "role": "region",
       "x": 43.679,
       "y": 59.8848,
@@ -2835,239 +2450,145 @@
         "x": 43.679,
         "y": 59.8848
       },
-      "fontSize": 15
+      "fontSize": 15,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0884,
+          "y": 0.1594,
+          "id": "land_of_ds_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.088,
+          "y": 0.1648,
+          "id": "land_of_ds_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0944,
+          "y": 0.1586,
+          "id": "land_of_ds_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1017,
+          "y": 0.151,
+          "id": "land_of_ds_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1107,
+          "y": 0.1497,
+          "id": "land_of_ds_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1134,
+          "y": 0.1532,
+          "id": "land_of_ds_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0955,
+          "y": 0.1662,
+          "id": "land_of_ds_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.096,
+          "y": 0.1722,
+          "id": "land_of_ds_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1015,
+          "y": 0.1619,
+          "id": "land_of_ds_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.1014,
+          "y": 0.167,
+          "id": "land_of_ds_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.1031,
+          "y": 0.1701,
+          "id": "land_of_ds_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.1091,
+          "y": 0.1608,
+          "id": "land_of_ds_012"
+        },
+        {
+          "role": "entry",
+          "x": 0.1094,
+          "y": 0.1653,
+          "id": "land_of_ds_013"
+        },
+        {
+          "role": "entry",
+          "x": 0.1163,
+          "y": 0.1589,
+          "id": "land_of_ds_014"
+        },
+        {
+          "role": "entry",
+          "x": 0.1176,
+          "y": 0.1647,
+          "id": "land_of_ds_015"
+        },
+        {
+          "role": "entry",
+          "x": 0.1241,
+          "y": 0.1559,
+          "id": "land_of_ds_016"
+        },
+        {
+          "role": "entry",
+          "x": 0.128,
+          "y": 0.1643,
+          "id": "land_of_ds_017"
+        },
+        {
+          "role": "entry",
+          "x": 0.1154,
+          "y": 0.1819,
+          "id": "land_of_ds_018"
+        },
+        {
+          "role": "entry",
+          "x": 0.123,
+          "y": 0.1782,
+          "id": "land_of_ds_019"
+        },
+        {
+          "role": "entry",
+          "x": 0.1289,
+          "y": 0.1816,
+          "id": "land_of_ds_020"
+        },
+        {
+          "role": "entry",
+          "x": 0.12,
+          "y": 0.1775,
+          "id": "land_of_ds_021"
+        },
+        {
+          "role": "entry",
+          "x": 0.1274,
+          "y": 0.1757,
+          "id": "land_of_ds_022"
+        }
+      ]
     },
     {
       "id": "bondage",
-      "en": "Bondage",
-      "zh": "身体限制",
       "type": "region",
-      "entries": [
-        {
-          "en": "Grope Box",
-          "zh": "固定盒",
-          "role": "entry",
-          "x": 0.132,
-          "y": 0.1494
-        },
-        {
-          "en": "Manacles",
-          "zh": "手/脚镣",
-          "role": "entry",
-          "x": 0.1333,
-          "y": 0.1517
-        },
-        {
-          "en": "Metal Bondage",
-          "zh": "金属束具",
-          "role": "entry",
-          "x": 0.1333,
-          "y": 0.1543
-        },
-        {
-          "en": "Device Bondage",
-          "zh": "器械束缚",
-          "role": "entry",
-          "x": 0.1353,
-          "y": 0.1568
-        },
-        {
-          "en": "Branks",
-          "zh": "面笼",
-          "role": "entry",
-          "x": 0.1337,
-          "y": 0.159
-        },
-        {
-          "en": "Cages",
-          "zh": "笼子",
-          "role": "entry",
-          "x": 0.1379,
-          "y": 0.1616
-        },
-        {
-          "en": "Punishment Ties",
-          "zh": "惩罚绑法",
-          "role": "entry",
-          "x": 0.1403,
-          "y": 0.1463
-        },
-        {
-          "en": "Predicament Bondage",
-          "zh": "困境绑法",
-          "role": "entry",
-          "x": 0.1447,
-          "y": 0.1486
-        },
-        {
-          "en": "Water Bondage",
-          "zh": "捆绑水刑",
-          "role": "entry",
-          "x": 0.1422,
-          "y": 0.1509
-        },
-        {
-          "en": "Face Bondage",
-          "zh": "面部限制",
-          "role": "entry",
-          "x": 0.1457,
-          "y": 0.1545
-        },
-        {
-          "en": "Mummification",
-          "zh": "木乃伊化",
-          "role": "entry",
-          "x": 0.1443,
-          "y": 0.1569
-        },
-        {
-          "en": "Vacuum Beds",
-          "zh": "真空床",
-          "role": "entry",
-          "x": 0.146,
-          "y": 0.1591
-        },
-        {
-          "en": "Sleepsacks",
-          "zh": "睡袋包裹",
-          "role": "entry",
-          "x": 0.1459,
-          "y": 0.161
-        },
-        {
-          "en": "Down Jacket ",
-          "zh": "羽绒服",
-          "role": "entry",
-          "x": 0.1422,
-          "y": 0.1595
-        },
-        {
-          "en": "Lacing Tables",
-          "zh": "限制台具",
-          "role": "entry",
-          "x": 0.1521,
-          "y": 0.1529
-        },
-        {
-          "en": "Shibari",
-          "zh": "紧缚",
-          "role": "entry",
-          "x": 0.1539,
-          "y": 0.1575
-        },
-        {
-          "en": "Suspension",
-          "zh": "悬吊",
-          "role": "entry",
-          "x": 3.1724,
-          "y": 3.0082
-        },
-        {
-          "en": "Asymmrtric Bondage",
-          "zh": "非对称绳缚",
-          "role": "entry",
-          "x": 3.1467,
-          "y": 3.1376
-        },
-        {
-          "en": "Nose Hooks",
-          "zh": "鼻勾",
-          "role": "entry",
-          "x": 0.1544,
-          "y": 0.1606
-        },
-        {
-          "en": "Posts",
-          "zh": "柱子",
-          "role": "entry",
-          "x": 0.1428,
-          "y": 0.1634
-        },
-        {
-          "en": "Strappado",
-          "zh": "后手吊",
-          "role": "entry",
-          "x": 0.1486,
-          "y": 0.1641
-        },
-        {
-          "en": "Spreader Bars",
-          "zh": "分腿杆",
-          "role": "entry",
-          "x": 0.1454,
-          "y": 0.1663
-        },
-        {
-          "en": "Stocks",
-          "zh": "头手枷",
-          "role": "entry",
-          "x": 0.1374,
-          "y": 0.1639
-        },
-        {
-          "en": "Armbinders",
-          "zh": "束臂",
-          "role": "entry",
-          "x": 0.1348,
-          "y": 0.1658
-        },
-        {
-          "en": "St. Andrew's Cross",
-          "zh": "X型十字架",
-          "role": "entry",
-          "x": 0.1372,
-          "y": 0.1679
-        },
-        {
-          "en": "Benches",
-          "zh": "凳子",
-          "role": "entry",
-          "x": 0.1473,
-          "y": 0.17
-        },
-        {
-          "en": "Butterfly Chair",
-          "zh": "蝴蝶椅",
-          "role": "entry",
-          "x": 0.1416,
-          "y": 0.1716
-        },
-        {
-          "en": "Bondage Belts",
-          "zh": "束缚带",
-          "role": "entry",
-          "x": 0.1475,
-          "y": 0.1784
-        },
-        {
-          "en": "Rope",
-          "zh": "绳子",
-          "role": "entry",
-          "x": 0.1473,
-          "y": 0.1825
-        },
-        {
-          "en": "Bondage Tape",
-          "zh": "静电胶带",
-          "role": "entry",
-          "x": 0.1398,
-          "y": 0.1873
-        },
-        {
-          "en": "Handcuffs",
-          "zh": "手铐",
-          "role": "entry",
-          "x": 0.1341,
-          "y": 0.1848
-        },
-        {
-          "en": "Chain",
-          "zh": "锁链",
-          "role": "entry",
-          "x": 0.134,
-          "y": 0.1874
-        }
-      ],
       "role": "region",
       "x": 56.7301,
       "y": 61.546,
@@ -3101,71 +2622,205 @@
         "x": 56.7301,
         "y": 61.546
       },
-      "fontSize": 15
+      "fontSize": 15,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.132,
+          "y": 0.1494,
+          "id": "bondage_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1333,
+          "y": 0.1517,
+          "id": "bondage_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1333,
+          "y": 0.1543,
+          "id": "bondage_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1353,
+          "y": 0.1568,
+          "id": "bondage_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1337,
+          "y": 0.159,
+          "id": "bondage_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1379,
+          "y": 0.1616,
+          "id": "bondage_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1403,
+          "y": 0.1463,
+          "id": "bondage_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1447,
+          "y": 0.1486,
+          "id": "bondage_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1422,
+          "y": 0.1509,
+          "id": "bondage_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.1457,
+          "y": 0.1545,
+          "id": "bondage_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.1443,
+          "y": 0.1569,
+          "id": "bondage_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.146,
+          "y": 0.1591,
+          "id": "bondage_012"
+        },
+        {
+          "role": "entry",
+          "x": 0.1459,
+          "y": 0.161,
+          "id": "bondage_013"
+        },
+        {
+          "role": "entry",
+          "x": 0.1422,
+          "y": 0.1595,
+          "id": "bondage_014"
+        },
+        {
+          "role": "entry",
+          "x": 0.1521,
+          "y": 0.1529,
+          "id": "bondage_015"
+        },
+        {
+          "role": "entry",
+          "x": 0.1539,
+          "y": 0.1575,
+          "id": "bondage_016"
+        },
+        {
+          "role": "entry",
+          "x": 3.1724,
+          "y": 3.0082,
+          "id": "bondage_017"
+        },
+        {
+          "role": "entry",
+          "x": 3.1467,
+          "y": 3.1376,
+          "id": "bondage_018"
+        },
+        {
+          "role": "entry",
+          "x": 0.1544,
+          "y": 0.1606,
+          "id": "bondage_019"
+        },
+        {
+          "role": "entry",
+          "x": 0.1428,
+          "y": 0.1634,
+          "id": "bondage_020"
+        },
+        {
+          "role": "entry",
+          "x": 0.1486,
+          "y": 0.1641,
+          "id": "bondage_021"
+        },
+        {
+          "role": "entry",
+          "x": 0.1454,
+          "y": 0.1663,
+          "id": "bondage_022"
+        },
+        {
+          "role": "entry",
+          "x": 0.1374,
+          "y": 0.1639,
+          "id": "bondage_023"
+        },
+        {
+          "role": "entry",
+          "x": 0.1348,
+          "y": 0.1658,
+          "id": "bondage_024"
+        },
+        {
+          "role": "entry",
+          "x": 0.1372,
+          "y": 0.1679,
+          "id": "bondage_025"
+        },
+        {
+          "role": "entry",
+          "x": 0.1473,
+          "y": 0.17,
+          "id": "bondage_026"
+        },
+        {
+          "role": "entry",
+          "x": 0.1416,
+          "y": 0.1716,
+          "id": "bondage_027"
+        },
+        {
+          "role": "entry",
+          "x": 0.1475,
+          "y": 0.1784,
+          "id": "bondage_028"
+        },
+        {
+          "role": "entry",
+          "x": 0.1473,
+          "y": 0.1825,
+          "id": "bondage_029"
+        },
+        {
+          "role": "entry",
+          "x": 0.1398,
+          "y": 0.1873,
+          "id": "bondage_030"
+        },
+        {
+          "role": "entry",
+          "x": 0.1341,
+          "y": 0.1848,
+          "id": "bondage_031"
+        },
+        {
+          "role": "entry",
+          "x": 0.134,
+          "y": 0.1874,
+          "id": "bondage_032"
+        }
+      ]
     },
     {
       "id": "body_modification",
-      "en": "Body Modification",
-      "zh": "身体改造",
       "type": "region",
-      "entries": [
-        {
-          "en": "Inflation",
-          "zh": "皮下膨大",
-          "role": "entry",
-          "x": 0.1546,
-          "y": 0.1216
-        },
-        {
-          "en": "Feeders and Gainers",
-          "zh": "喂食与增重",
-          "role": "entry",
-          "x": 0.1637,
-          "y": 0.1201
-        },
-        {
-          "en": "Erotic Piercing",
-          "zh": "情色穿刺",
-          "role": "entry",
-          "x": 0.1707,
-          "y": 0.1226
-        },
-        {
-          "en": "Nipple Elongation",
-          "zh": "乳头延伸",
-          "role": "entry",
-          "x": 0.1783,
-          "y": 0.1256
-        },
-        {
-          "en": "Clit Elongation",
-          "zh": "阴蒂延伸",
-          "role": "entry",
-          "x": 0.1805,
-          "y": 0.1318
-        },
-        {
-          "en": "Branding",
-          "zh": "烙印",
-          "role": "entry",
-          "x": 0.1574,
-          "y": 0.132
-        },
-        {
-          "en": "Scarification",
-          "zh": "留疤",
-          "role": "entry",
-          "x": 0.1634,
-          "y": 0.1282
-        },
-        {
-          "en": "Erotic Tattooing",
-          "zh": "情色纹身",
-          "role": "entry",
-          "x": 0.1715,
-          "y": 0.1327
-        }
-      ],
       "role": "region",
       "x": 67.1685,
       "y": 46.8457,
@@ -3199,85 +2854,61 @@
         "x": 67.1685,
         "y": 46.8457
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1546,
+          "y": 0.1216,
+          "id": "body_modification_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1637,
+          "y": 0.1201,
+          "id": "body_modification_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1707,
+          "y": 0.1226,
+          "id": "body_modification_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1783,
+          "y": 0.1256,
+          "id": "body_modification_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1805,
+          "y": 0.1318,
+          "id": "body_modification_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1574,
+          "y": 0.132,
+          "id": "body_modification_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1634,
+          "y": 0.1282,
+          "id": "body_modification_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1715,
+          "y": 0.1327,
+          "id": "body_modification_008"
+        }
+      ]
     },
     {
       "id": "activity_fetishes",
-      "en": "Activity Fetishes",
-      "zh": "行为唤起",
       "type": "region",
-      "entries": [
-        {
-          "en": "Bootblacking",
-          "zh": "擦皮靴",
-          "role": "entry",
-          "x": 0.1786,
-          "y": 0.1127
-        },
-        {
-          "en": "Smoking",
-          "zh": "吸烟",
-          "role": "entry",
-          "x": 0.1913,
-          "y": 0.1113
-        },
-        {
-          "en": "Drinking",
-          "zh": "饮酒",
-          "role": "entry",
-          "x": 0.1956,
-          "y": 0.1141
-        },
-        {
-          "en": "Tickling",
-          "zh": "挠痒痒",
-          "role": "entry",
-          "x": 0.2001,
-          "y": 0.108
-        },
-        {
-          "en": "Speaking Foreign Language",
-          "zh": "说外语",
-          "role": "entry",
-          "x": 0.2056,
-          "y": 0.1117
-        },
-        {
-          "en": "Showering/Bathing",
-          "zh": "洗澡/沐浴",
-          "role": "entry",
-          "x": 0.2064,
-          "y": 0.1152
-        },
-        {
-          "en": "Hair Brushing",
-          "zh": "梳头",
-          "role": "entry",
-          "x": 0.2037,
-          "y": 0.1186
-        },
-        {
-          "en": "Shooting Guns",
-          "zh": "打枪",
-          "role": "entry",
-          "x": 0.2114,
-          "y": 0.1189
-        },
-        {
-          "en": "Weightlifting/Exercising",
-          "zh": "硬拉/健身",
-          "role": "entry",
-          "x": 0.2045,
-          "y": 0.1228
-        },
-        {
-          "en": "Dancing",
-          "zh": "舞蹈",
-          "role": "entry",
-          "x": 0.2041,
-          "y": 0.1271
-        }
-      ],
       "role": "region",
       "x": 79.142,
       "y": 42.1586,
@@ -3311,50 +2942,73 @@
         "x": 79.142,
         "y": 42.1586
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1786,
+          "y": 0.1127,
+          "id": "activity_fetishes_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1913,
+          "y": 0.1113,
+          "id": "activity_fetishes_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1956,
+          "y": 0.1141,
+          "id": "activity_fetishes_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.2001,
+          "y": 0.108,
+          "id": "activity_fetishes_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.2056,
+          "y": 0.1117,
+          "id": "activity_fetishes_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.2064,
+          "y": 0.1152,
+          "id": "activity_fetishes_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.2037,
+          "y": 0.1186,
+          "id": "activity_fetishes_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.2114,
+          "y": 0.1189,
+          "id": "activity_fetishes_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.2045,
+          "y": 0.1228,
+          "id": "activity_fetishes_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.2041,
+          "y": 0.1271,
+          "id": "activity_fetishes_010"
+        }
+      ]
     },
     {
       "id": "ass_play",
-      "en": "Ass Play",
-      "zh": "肛门开发",
       "type": "region",
-      "entries": [
-        {
-          "en": "Anal Beads",
-          "zh": "肛珠",
-          "role": "entry",
-          "x": 0.1795,
-          "y": 0.1198
-        },
-        {
-          "en": "Sodomy",
-          "zh": "肛交",
-          "role": "entry",
-          "x": 0.1873,
-          "y": 0.1203
-        },
-        {
-          "en": "Rimming",
-          "zh": "舔肛",
-          "role": "entry",
-          "x": 0.1949,
-          "y": 0.1185
-        },
-        {
-          "en": "Prolapse",
-          "zh": "直肠脱垂",
-          "role": "entry",
-          "x": 0.1949,
-          "y": 0.1208
-        },
-        {
-          "en": "Ass to Mouth",
-          "zh": "肛到口",
-          "role": "entry",
-          "x": 0.1948,
-          "y": 0.1239
-        }
-      ],
       "role": "region",
       "x": 75.988,
       "y": 44.4368,
@@ -3388,36 +3042,43 @@
         "x": 75.988,
         "y": 44.4368
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1795,
+          "y": 0.1198,
+          "id": "ass_play_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1873,
+          "y": 0.1203,
+          "id": "ass_play_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1949,
+          "y": 0.1185,
+          "id": "ass_play_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1949,
+          "y": 0.1208,
+          "id": "ass_play_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1948,
+          "y": 0.1239,
+          "id": "ass_play_005"
+        }
+      ]
     },
     {
       "id": "competition",
-      "en": "Competition",
-      "zh": "竞技",
       "type": "region",
-      "entries": [
-        {
-          "en": "Blowjob Races",
-          "zh": "口交竞速",
-          "role": "entry",
-          "x": 0.1892,
-          "y": 0.1301
-        },
-        {
-          "en": "Wet T-Shirt Contests",
-          "zh": "湿衣选美",
-          "role": "entry",
-          "x": 0.1918,
-          "y": 0.1321
-        },
-        {
-          "en": "Deep Throat Contests",
-          "zh": "深喉竞技",
-          "role": "entry",
-          "x": 0.2028,
-          "y": 0.1318
-        }
-      ],
       "role": "region",
       "x": 78.8047,
       "y": 48.1411,
@@ -3451,78 +3112,31 @@
         "x": 78.8047,
         "y": 48.1411
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1892,
+          "y": 0.1301,
+          "id": "competition_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1918,
+          "y": 0.1321,
+          "id": "competition_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.2028,
+          "y": 0.1318,
+          "id": "competition_003"
+        }
+      ]
     },
     {
       "id": "humiliation",
-      "en": "Humiliation",
-      "zh": "羞辱",
       "type": "region",
-      "entries": [
-        {
-          "en": "CFNM",
-          "zh": "女衣男裸",
-          "role": "entry",
-          "x": 0.1867,
-          "y": 0.1382
-        },
-        {
-          "en": "CMNF",
-          "zh": "男衣女裸",
-          "role": "entry",
-          "x": 0.1868,
-          "y": 0.14
-        },
-        {
-          "en": "Public exposure",
-          "zh": "公开展示",
-          "role": "entry",
-          "x": 0.1932,
-          "y": 0.1387
-        },
-        {
-          "en": "Human Ashtray",
-          "zh": "人体烟灰缸",
-          "role": "entry",
-          "x": 0.1933,
-          "y": 0.1409
-        },
-        {
-          "en": "Cuckolding",
-          "zh": "绿帽 (NTR)",
-          "role": "entry",
-          "x": 0.1869,
-          "y": 0.1428
-        },
-        {
-          "en": "Cock Ridicule",
-          "zh": "阴茎嘲讽",
-          "role": "entry",
-          "x": 0.1956,
-          "y": 0.1433
-        },
-        {
-          "en": "Defilement",
-          "zh": "心理玷污",
-          "role": "entry",
-          "x": 0.1917,
-          "y": 0.1452
-        },
-        {
-          "en": "Hotwifing",
-          "zh": "辣妻",
-          "role": "entry",
-          "x": 0.1873,
-          "y": 0.1488
-        },
-        {
-          "en": "Dirty Talk",
-          "zh": "骚话",
-          "role": "entry",
-          "x": 0.2015,
-          "y": 0.1396
-        }
-      ],
       "role": "region",
       "x": 77.8156,
       "y": 52.3805,
@@ -3556,14 +3170,67 @@
         "x": 77.8156,
         "y": 52.3805
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1867,
+          "y": 0.1382,
+          "id": "humiliation_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1868,
+          "y": 0.14,
+          "id": "humiliation_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1932,
+          "y": 0.1387,
+          "id": "humiliation_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1933,
+          "y": 0.1409,
+          "id": "humiliation_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1869,
+          "y": 0.1428,
+          "id": "humiliation_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1956,
+          "y": 0.1433,
+          "id": "humiliation_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1917,
+          "y": 0.1452,
+          "id": "humiliation_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1873,
+          "y": 0.1488,
+          "id": "humiliation_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.2015,
+          "y": 0.1396,
+          "id": "humiliation_009"
+        }
+      ]
     },
     {
       "id": "Sex_tourism",
-      "en": "Sex Tourism",
-      "zh": "性观光",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 78.5139,
       "y": 56.1617,
@@ -3597,57 +3264,12 @@
         "x": 78.5139,
         "y": 56.1617
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "anonymous_sex",
-      "en": "Anonymous Sex",
-      "zh": "匿名性爱",
       "type": "region",
-      "entries": [
-        {
-          "en": "Bathhouses",
-          "zh": "澡堂",
-          "role": "entry",
-          "x": 0.1684,
-          "y": 0.1443
-        },
-        {
-          "en": "Raves",
-          "zh": "锐舞派对",
-          "role": "entry",
-          "x": 0.168,
-          "y": 0.1466
-        },
-        {
-          "en": "Truck Stops",
-          "zh": "高速服务区",
-          "role": "entry",
-          "x": 0.1703,
-          "y": 0.1491
-        },
-        {
-          "en": "Toothing",
-          "zh": "摇一摇",
-          "role": "entry",
-          "x": 0.1798,
-          "y": 0.1416
-        },
-        {
-          "en": "Glory Holes",
-          "zh": "鸟洞",
-          "role": "entry",
-          "x": 0.178,
-          "y": 0.1455
-        },
-        {
-          "en": "Cottaging",
-          "zh": "同志桑拿",
-          "role": "entry",
-          "x": 0.1795,
-          "y": 0.1518
-        }
-      ],
       "role": "region",
       "x": 70.5175,
       "y": 53.2237,
@@ -3681,50 +3303,49 @@
         "x": 70.5175,
         "y": 53.2237
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1684,
+          "y": 0.1443,
+          "id": "anonymous_sex_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.168,
+          "y": 0.1466,
+          "id": "anonymous_sex_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1703,
+          "y": 0.1491,
+          "id": "anonymous_sex_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1798,
+          "y": 0.1416,
+          "id": "anonymous_sex_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.178,
+          "y": 0.1455,
+          "id": "anonymous_sex_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1795,
+          "y": 0.1518,
+          "id": "anonymous_sex_006"
+        }
+      ]
     },
     {
       "id": "chemical_alteration",
-      "en": "Chemical Alteration",
-      "zh": "药物改变意识",
       "type": "region",
-      "entries": [
-        {
-          "en": "Poppers",
-          "zh": "催情剂",
-          "role": "entry",
-          "x": 0.2203,
-          "y": 0.1026
-        },
-        {
-          "en": "Ecstasy",
-          "zh": "摇头丸",
-          "role": "entry",
-          "x": 0.2182,
-          "y": 0.1046
-        },
-        {
-          "en": "Crystal Meth",
-          "zh": "冰毒",
-          "role": "entry",
-          "x": 0.2148,
-          "y": 0.1064
-        },
-        {
-          "en": "Cocaine",
-          "zh": "可卡因",
-          "role": "entry",
-          "x": 0.2148,
-          "y": 0.109
-        },
-        {
-          "en": "Alcohol",
-          "zh": "酒精",
-          "role": "entry",
-          "x": 0.2184,
-          "y": 0.1118
-        }
-      ],
       "role": "region",
       "x": 86.8205,
       "y": 38.6626,
@@ -3758,14 +3379,43 @@
         "x": 86.8205,
         "y": 38.6626
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.2203,
+          "y": 0.1026,
+          "id": "chemical_alteration_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.2182,
+          "y": 0.1046,
+          "id": "chemical_alteration_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.2148,
+          "y": 0.1064,
+          "id": "chemical_alteration_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.2148,
+          "y": 0.109,
+          "id": "chemical_alteration_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.2184,
+          "y": 0.1118,
+          "id": "chemical_alteration_005"
+        }
+      ]
     },
     {
       "id": "erotic_body_painting",
-      "en": "Erotic Body Painting",
-      "zh": "情色人体彩绘",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 77.5982,
       "y": 36.3472,
@@ -3799,14 +3449,12 @@
         "x": 77.5982,
         "y": 36.3472
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Erotic_Wrestling",
-      "en": "Erotic Wrestling",
-      "zh": "情色摔跤",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 81.0513,
       "y": 36.4955,
@@ -3840,78 +3488,12 @@
         "x": 81.0513,
         "y": 36.4955
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "profession_fetishes",
-      "en": "Profession Fetishes",
-      "zh": "职业恋",
       "type": "region",
-      "entries": [
-        {
-          "en": "Geeks",
-          "zh": "极客",
-          "role": "entry",
-          "x": 0.1183,
-          "y": 0.1857
-        },
-        {
-          "en": "Librarians",
-          "zh": "图书管理员",
-          "role": "entry",
-          "x": 0.1164,
-          "y": 0.1872
-        },
-        {
-          "en": "Rock Stars",
-          "zh": "摇滚明星",
-          "role": "entry",
-          "x": 0.118,
-          "y": 0.1893
-        },
-        {
-          "en": "Bankers",
-          "zh": "银行家",
-          "role": "entry",
-          "x": 0.1174,
-          "y": 0.1917
-        },
-        {
-          "en": "Cheerleaders",
-          "zh": "拉拉队",
-          "role": "entry",
-          "x": 0.1164,
-          "y": 0.1936
-        },
-        {
-          "en": "Teachers",
-          "zh": "老师",
-          "role": "entry",
-          "x": 0.1129,
-          "y": 0.1897
-        },
-        {
-          "en": "Celebrities",
-          "zh": "名人",
-          "role": "entry",
-          "x": 0.1261,
-          "y": 0.1885
-        },
-        {
-          "en": "Athletes",
-          "zh": "运动员",
-          "role": "entry",
-          "x": 0.1251,
-          "y": 0.1906
-        },
-        {
-          "en": "Criminals",
-          "zh": "罪犯",
-          "role": "entry",
-          "x": 0.1254,
-          "y": 0.1928
-        }
-      ],
       "role": "region",
       "x": 48.9301,
       "y": 69.4149,
@@ -3945,43 +3527,67 @@
         "x": 48.9301,
         "y": 69.4149
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1183,
+          "y": 0.1857,
+          "id": "profession_fetishes_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1164,
+          "y": 0.1872,
+          "id": "profession_fetishes_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.118,
+          "y": 0.1893,
+          "id": "profession_fetishes_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1174,
+          "y": 0.1917,
+          "id": "profession_fetishes_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1164,
+          "y": 0.1936,
+          "id": "profession_fetishes_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1129,
+          "y": 0.1897,
+          "id": "profession_fetishes_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1261,
+          "y": 0.1885,
+          "id": "profession_fetishes_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1251,
+          "y": 0.1906,
+          "id": "profession_fetishes_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1254,
+          "y": 0.1928,
+          "id": "profession_fetishes_009"
+        }
+      ]
     },
     {
       "id": "racial_fetishes",
-      "en": "Racial Fetishes",
-      "zh": "种族恋",
       "type": "region",
-      "entries": [
-        {
-          "en": "Black",
-          "zh": "黑人",
-          "role": "entry",
-          "x": 0.1149,
-          "y": 0.1988
-        },
-        {
-          "en": "Latino",
-          "zh": "拉丁裔",
-          "role": "entry",
-          "x": 0.1159,
-          "y": 0.2009
-        },
-        {
-          "en": "Caucasian",
-          "zh": "白人",
-          "role": "entry",
-          "x": 0.1218,
-          "y": 0.1982
-        },
-        {
-          "en": "Asian",
-          "zh": "亚裔",
-          "role": "entry",
-          "x": 0.1221,
-          "y": 0.2007
-        }
-      ],
       "role": "region",
       "x": 48.5689,
       "y": 73.1053,
@@ -4015,14 +3621,37 @@
         "x": 48.5689,
         "y": 73.1053
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1149,
+          "y": 0.1988,
+          "id": "racial_fetishes_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1159,
+          "y": 0.2009,
+          "id": "racial_fetishes_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1218,
+          "y": 0.1982,
+          "id": "racial_fetishes_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1221,
+          "y": 0.2007,
+          "id": "racial_fetishes_004"
+        }
+      ]
     },
     {
       "id": "Interracial",
-      "en": "Interracial",
-      "zh": "跨种族",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 45.6421,
       "y": 76.6424,
@@ -4056,14 +3685,12 @@
         "x": 45.6421,
         "y": 76.6424
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "tribbing",
-      "en": "tribbing",
-      "zh": "磨豆腐",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 53.4838,
       "y": 70.6224,
@@ -4097,14 +3724,12 @@
         "x": 53.4838,
         "y": 70.6224
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "gay_homeland",
-      "en": "Gay Homeland",
-      "zh": "同性恋之地",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 53.0841,
       "y": 72.7114,
@@ -4138,57 +3763,12 @@
         "x": 53.0841,
         "y": 72.7114
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "locations",
-      "en": "Locations",
-      "zh": "特殊地点",
       "type": "region",
-      "entries": [
-        {
-          "en": "Pools/Lakes",
-          "zh": "泳池／湖泊",
-          "role": "entry",
-          "x": 0.1251,
-          "y": 0.2036
-        },
-        {
-          "en": "Wilderness",
-          "zh": "野外",
-          "role": "entry",
-          "x": 0.1196,
-          "y": 0.205
-        },
-        {
-          "en": "Graveyards",
-          "zh": "墓地",
-          "role": "entry",
-          "x": 0.1203,
-          "y": 0.209
-        },
-        {
-          "en": "Beaches",
-          "zh": "沙滩",
-          "role": "entry",
-          "x": 0.1274,
-          "y": 0.207
-        },
-        {
-          "en": "Churches",
-          "zh": "教堂",
-          "role": "entry",
-          "x": 0.1174,
-          "y": 0.2109
-        },
-        {
-          "en": "Mile High Club",
-          "zh": "飞机",
-          "role": "entry",
-          "x": 0.1259,
-          "y": 0.2113
-        }
-      ],
       "role": "region",
       "x": 49.3012,
       "y": 76.362,
@@ -4222,64 +3802,49 @@
         "x": 49.3012,
         "y": 76.362
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1251,
+          "y": 0.2036,
+          "id": "locations_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1196,
+          "y": 0.205,
+          "id": "locations_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1203,
+          "y": 0.209,
+          "id": "locations_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1274,
+          "y": 0.207,
+          "id": "locations_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1174,
+          "y": 0.2109,
+          "id": "locations_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1259,
+          "y": 0.2113,
+          "id": "locations_006"
+        }
+      ]
     },
     {
       "id": "group_sex",
-      "en": "Group Sex",
-      "zh": "群交",
       "type": "region",
-      "entries": [
-        {
-          "en": "Threesomes",
-          "zh": "三人行",
-          "role": "entry",
-          "x": 0.1129,
-          "y": 0.2143
-        },
-        {
-          "en": "Gang Bang",
-          "zh": "轮交",
-          "role": "entry",
-          "x": 0.1152,
-          "y": 0.2253
-        },
-        {
-          "en": "Key Parties",
-          "zh": "群组抽签",
-          "role": "entry",
-          "x": 0.1207,
-          "y": 0.2407
-        },
-        {
-          "en": "Swing",
-          "zh": "换伴侣",
-          "role": "entry",
-          "x": 0.1214,
-          "y": 0.2456
-        },
-        {
-          "en": "Soft Swing",
-          "zh": "软性换伴侣",
-          "role": "entry",
-          "x": 0.1211,
-          "y": 0.2507
-        },
-        {
-          "en": "Synchronized Fucking",
-          "zh": "同步性爱",
-          "role": "entry",
-          "x": 0.1219,
-          "y": 0.2356
-        },
-        {
-          "en": "Circle Jerks",
-          "zh": "轮流手淫",
-          "role": "entry",
-          "x": 0.1138,
-          "y": 0.2472
-        }
-      ],
       "role": "region",
       "x": 47.0914,
       "y": 85.7332,
@@ -4313,99 +3878,55 @@
         "x": 47.0914,
         "y": 85.7332
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1129,
+          "y": 0.2143,
+          "id": "group_sex_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1152,
+          "y": 0.2253,
+          "id": "group_sex_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1207,
+          "y": 0.2407,
+          "id": "group_sex_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1214,
+          "y": 0.2456,
+          "id": "group_sex_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1211,
+          "y": 0.2507,
+          "id": "group_sex_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1219,
+          "y": 0.2356,
+          "id": "group_sex_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1138,
+          "y": 0.2472,
+          "id": "group_sex_007"
+        }
+      ]
     },
     {
       "id": "role_play",
-      "en": "Role Play",
-      "zh": "角色扮演",
       "type": "region",
-      "entries": [
-        {
-          "en": "Student/Teacher",
-          "zh": "学生/老师",
-          "role": "entry",
-          "x": 0.1083,
-          "y": 0.1991
-        },
-        {
-          "en": "Naughty Nurse",
-          "zh": "调皮护士",
-          "role": "entry",
-          "x": 0.1079,
-          "y": 0.2025
-        },
-        {
-          "en": "French Maid",
-          "zh": "女仆",
-          "role": "entry",
-          "x": 0.1066,
-          "y": 0.2134
-        },
-        {
-          "en": "Harem Girl",
-          "zh": "贫民少女",
-          "role": "entry",
-          "x": 0.1079,
-          "y": 0.2167
-        },
-        {
-          "en": "Damsels in Distress",
-          "zh": "落难少女",
-          "role": "entry",
-          "x": 0.1032,
-          "y": 0.2261
-        },
-        {
-          "en": "Abduction",
-          "zh": "绑架",
-          "role": "entry",
-          "x": 0.1031,
-          "y": 0.2305
-        },
-        {
-          "en": "Burglar",
-          "zh": "入室盗窃",
-          "role": "entry",
-          "x": 0.1011,
-          "y": 0.2342
-        },
-        {
-          "en": "Rape Fantasy",
-          "zh": "强奸幻想",
-          "role": "entry",
-          "x": 0.1095,
-          "y": 0.2296
-        },
-        {
-          "en": "Medical Scenes",
-          "zh": "医疗场景",
-          "role": "entry",
-          "x": 0.1068,
-          "y": 0.2373
-        },
-        {
-          "en": "Priest/Num",
-          "zh": "牧师/修女",
-          "role": "entry",
-          "x": 0.107,
-          "y": 0.2424
-        },
-        {
-          "en": "Prison",
-          "zh": "监狱",
-          "role": "entry",
-          "x": 0.1052,
-          "y": 0.2456
-        },
-        {
-          "en": "Interrogation",
-          "zh": "审讯",
-          "role": "entry",
-          "x": 0.107,
-          "y": 0.249
-        }
-      ],
       "role": "region",
       "x": 42.3891,
       "y": 83.086,
@@ -4439,14 +3960,85 @@
         "x": 42.3891,
         "y": 83.086
       },
-      "fontSize": 13
+      "fontSize": 13,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1083,
+          "y": 0.1991,
+          "id": "role_play_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1079,
+          "y": 0.2025,
+          "id": "role_play_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1066,
+          "y": 0.2134,
+          "id": "role_play_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1079,
+          "y": 0.2167,
+          "id": "role_play_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1032,
+          "y": 0.2261,
+          "id": "role_play_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1031,
+          "y": 0.2305,
+          "id": "role_play_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1011,
+          "y": 0.2342,
+          "id": "role_play_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1095,
+          "y": 0.2296,
+          "id": "role_play_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1068,
+          "y": 0.2373,
+          "id": "role_play_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.107,
+          "y": 0.2424,
+          "id": "role_play_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.1052,
+          "y": 0.2456,
+          "id": "role_play_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.107,
+          "y": 0.249,
+          "id": "role_play_012"
+        }
+      ]
     },
     {
       "id": "transvestism",
-      "en": "Transvestism",
-      "zh": "异装癖",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 38.6928,
       "y": 73.6329,
@@ -4480,99 +4072,12 @@
         "x": 38.6928,
         "y": 73.6329
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Clothing",
-      "en": "Clothing",
-      "zh": "服饰",
       "type": "region",
-      "entries": [
-        {
-          "en": "Denim",
-          "zh": "牛仔布",
-          "role": "entry",
-          "x": 0.0876,
-          "y": 0.2016
-        },
-        {
-          "en": "Shirtcocking",
-          "zh": "无裤上衣",
-          "role": "entry",
-          "x": 0.0873,
-          "y": 0.2045
-        },
-        {
-          "en": "Shoe Fetish",
-          "zh": "鞋恋",
-          "role": "entry",
-          "x": 0.0878,
-          "y": 0.2074
-        },
-        {
-          "en": "High Heels",
-          "zh": "高跟鞋",
-          "role": "entry",
-          "x": 0.0827,
-          "y": 0.2065
-        },
-        {
-          "en": "Gloves",
-          "zh": "手套恋",
-          "role": "entry",
-          "x": 0.0985,
-          "y": 0.2046
-        },
-        {
-          "en": "Latex/Rubber",
-          "zh": "乳胶／橡胶",
-          "role": "entry",
-          "x": 0.0981,
-          "y": 0.2076
-        },
-        {
-          "en": "PVC/Vinyl",
-          "zh": "PVC／乙烯基",
-          "role": "entry",
-          "x": 0.0873,
-          "y": 0.2137
-        },
-        {
-          "en": "Leather",
-          "zh": "皮革",
-          "role": "entry",
-          "x": 0.0939,
-          "y": 0.2103
-        },
-        {
-          "en": "Chain Mail",
-          "zh": "锁子甲",
-          "role": "entry",
-          "x": 0.093,
-          "y": 0.2148
-        },
-        {
-          "en": "Corsetry",
-          "zh": "紧身胸衣",
-          "role": "entry",
-          "x": 0.0989,
-          "y": 0.2137
-        },
-        {
-          "en": "Fully Clothed Sex",
-          "zh": "穿衣做爱",
-          "role": "entry",
-          "x": 0.0889,
-          "y": 0.2244
-        },
-        {
-          "en": "Tight-Lacing",
-          "zh": "束腰",
-          "role": "entry",
-          "x": 0.0973,
-          "y": 0.2274
-        }
-      ],
       "role": "region",
       "x": 37.2936,
       "y": 78.7542,
@@ -4606,14 +4111,85 @@
         "x": 37.2936,
         "y": 78.7542
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0876,
+          "y": 0.2016,
+          "id": "Clothing_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0873,
+          "y": 0.2045,
+          "id": "Clothing_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0878,
+          "y": 0.2074,
+          "id": "Clothing_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0827,
+          "y": 0.2065,
+          "id": "Clothing_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0985,
+          "y": 0.2046,
+          "id": "Clothing_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0981,
+          "y": 0.2076,
+          "id": "Clothing_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0873,
+          "y": 0.2137,
+          "id": "Clothing_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0939,
+          "y": 0.2103,
+          "id": "Clothing_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.093,
+          "y": 0.2148,
+          "id": "Clothing_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.0989,
+          "y": 0.2137,
+          "id": "Clothing_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.0889,
+          "y": 0.2244,
+          "id": "Clothing_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.0973,
+          "y": 0.2274,
+          "id": "Clothing_012"
+        }
+      ]
     },
     {
       "id": "Natori_Masks",
-      "en": "Natori Masks",
-      "zh": "仿真面具",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 33.0116,
       "y": 70.6283,
@@ -4647,14 +4223,12 @@
         "x": 33.0116,
         "y": 70.6283
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "realdolls",
-      "en": "Real Dolls",
-      "zh": "仿真人偶",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 33.8304,
       "y": 68.2031,
@@ -4688,14 +4262,12 @@
         "x": 33.8304,
         "y": 68.2031
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Human_Dolls",
-      "en": "Human Dolls",
-      "zh": "模特人偶",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 31.0334,
       "y": 69.8185,
@@ -4729,14 +4301,12 @@
         "x": 31.0334,
         "y": 69.8185
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Statue_Fetish",
-      "en": "Statue Fetish",
-      "zh": "雕像癖好",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 29.6226,
       "y": 68.4966,
@@ -4770,14 +4340,12 @@
         "x": 29.6226,
         "y": 68.4966
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Robot_Fetish",
-      "en": "Robot Fetish",
-      "zh": "机器人癖好",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 34.9935,
       "y": 62.5519,
@@ -4811,14 +4379,12 @@
         "x": 34.9935,
         "y": 62.5519
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Teledildonics",
-      "en": "Telidildonics",
-      "zh": "远程玩具",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 31.3371,
       "y": 62.3832,
@@ -4852,36 +4418,12 @@
         "x": 31.3371,
         "y": 62.3832
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Fucking_machines",
-      "en": "Fucking Machines",
-      "zh": "炮机",
       "type": "region",
-      "entries": [
-        {
-          "en": "Fuckzall",
-          "zh": "手持炮机",
-          "role": "entry",
-          "x": 0.09,
-          "y": 0.1777
-        },
-        {
-          "en": "Monkey Rocker",
-          "zh": "跪姿摇椅",
-          "role": "entry",
-          "x": 0.0889,
-          "y": 0.1815
-        },
-        {
-          "en": "Sybian",
-          "zh": "电动马鞍",
-          "role": "entry",
-          "x": 0.0915,
-          "y": 0.1846
-        }
-      ],
       "role": "region",
       "x": 36.0013,
       "y": 65.7433,
@@ -4915,36 +4457,31 @@
         "x": 36.0013,
         "y": 65.7433
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.09,
+          "y": 0.1777,
+          "id": "Fucking_machines_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0889,
+          "y": 0.1815,
+          "id": "Fucking_machines_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0915,
+          "y": 0.1846,
+          "id": "Fucking_machines_003"
+        }
+      ]
     },
     {
       "id": "Hentai",
-      "en": "Hentai",
-      "zh": "黄色动画/动漫",
       "type": "region",
-      "entries": [
-        {
-          "en": "Chibi",
-          "zh": "Q版角色",
-          "role": "entry",
-          "x": 0.0769,
-          "y": 0.1763
-        },
-        {
-          "en": "Guro",
-          "zh": "情色怪诞",
-          "role": "entry",
-          "x": 0.0796,
-          "y": 0.1786
-        },
-        {
-          "en": "Futanari",
-          "zh": "扶她",
-          "role": "entry",
-          "x": 0.0823,
-          "y": 0.1809
-        }
-      ],
       "role": "region",
       "x": 32.4653,
       "y": 65.537,
@@ -4978,22 +4515,31 @@
         "x": 32.4653,
         "y": 65.537
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0769,
+          "y": 0.1763,
+          "id": "Hentai_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0796,
+          "y": 0.1786,
+          "id": "Hentai_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0823,
+          "y": 0.1809,
+          "id": "Hentai_003"
+        }
+      ]
     },
     {
       "id": "cosplay",
-      "en": "Cosplay",
-      "zh": "Cosplay",
       "type": "region",
-      "entries": [
-        {
-          "en": "Clown Fetish",
-          "zh": "小丑情节",
-          "role": "entry",
-          "x": 0.073,
-          "y": 0.1795
-        }
-      ],
       "role": "region",
       "x": 27.9554,
       "y": 67.3392,
@@ -5027,50 +4573,19 @@
         "x": 27.9554,
         "y": 67.3392
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.073,
+          "y": 0.1795,
+          "id": "cosplay_001"
+        }
+      ]
     },
     {
       "id": "sploshing",
-      "en": "Sploshing",
-      "zh": "湿物癖好",
       "type": "region",
-      "entries": [
-        {
-          "en": "Milk Baths",
-          "zh": "牛奶浴",
-          "role": "entry",
-          "x": 0.0589,
-          "y": 0.1789
-        },
-        {
-          "en": "Paint",
-          "zh": "涂颜料",
-          "role": "entry",
-          "x": 0.0641,
-          "y": 0.1772
-        },
-        {
-          "en": "Oiled",
-          "zh": "涂油",
-          "role": "entry",
-          "x": 0.0674,
-          "y": 0.1743
-        },
-        {
-          "en": "Mudlarking",
-          "zh": "稀泥打滚",
-          "role": "entry",
-          "x": 0.0717,
-          "y": 0.1754
-        },
-        {
-          "en": "Pies/Cakes",
-          "zh": "涂果酱/蛋糕",
-          "role": "entry",
-          "x": 0.0637,
-          "y": 0.1814
-        }
-      ],
       "role": "region",
       "x": 26.1236,
       "y": 64.9263,
@@ -5104,36 +4619,43 @@
         "x": 26.1236,
         "y": 64.9263
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0589,
+          "y": 0.1789,
+          "id": "sploshing_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0641,
+          "y": 0.1772,
+          "id": "sploshing_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0674,
+          "y": 0.1743,
+          "id": "sploshing_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0717,
+          "y": 0.1754,
+          "id": "sploshing_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0637,
+          "y": 0.1814,
+          "id": "sploshing_005"
+        }
+      ]
     },
     {
       "id": "crushing_trampling",
-      "en": "Crushing/Trampling",
-      "zh": "踩踏/碾压",
       "type": "region",
-      "entries": [
-        {
-          "en": "Animal Crushing",
-          "zh": "动物碾压",
-          "role": "entry",
-          "x": 0.0557,
-          "y": 0.1647
-        },
-        {
-          "en": "Object Crushing",
-          "zh": "物品碾压",
-          "role": "entry",
-          "x": 0.0606,
-          "y": 0.1669
-        },
-        {
-          "en": "Body Walking",
-          "zh": "踩体",
-          "role": "entry",
-          "x": 0.0559,
-          "y": 0.1706
-        }
-      ],
       "role": "region",
       "x": 24.0786,
       "y": 60.6233,
@@ -5167,36 +4689,31 @@
         "x": 24.0786,
         "y": 60.6233
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0557,
+          "y": 0.1647,
+          "id": "crushing_trampling_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0606,
+          "y": 0.1669,
+          "id": "crushing_trampling_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0559,
+          "y": 0.1706,
+          "id": "crushing_trampling_003"
+        }
+      ]
     },
     {
       "id": "automobile_fetishes",
-      "en": "Automobile Fetishes",
-      "zh": "汽车恋",
       "type": "region",
-      "entries": [
-        {
-          "en": "Sex with Cars",
-          "zh": "与车性爱",
-          "role": "entry",
-          "x": 0.0629,
-          "y": 0.1482
-        },
-        {
-          "en": "Sex with Bike",
-          "zh": "与自行/摩托车性爱",
-          "role": "entry",
-          "x": 0.0655,
-          "y": 0.1512
-        },
-        {
-          "en": "Crash Fetish",
-          "zh": "车祸癖好",
-          "role": "entry",
-          "x": 0.0617,
-          "y": 0.1527
-        }
-      ],
       "role": "region",
       "x": 25.7648,
       "y": 54.654,
@@ -5230,99 +4747,31 @@
         "x": 25.7648,
         "y": 54.654
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0629,
+          "y": 0.1482,
+          "id": "automobile_fetishes_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0655,
+          "y": 0.1512,
+          "id": "automobile_fetishes_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0617,
+          "y": 0.1527,
+          "id": "automobile_fetishes_003"
+        }
+      ]
     },
     {
       "id": "body_type_fetishes",
-      "en": "Body Type Fetishes",
-      "zh": "体型恋",
       "type": "region",
-      "entries": [
-        {
-          "en": "Fat Fetish",
-          "zh": "恋肥胖",
-          "role": "entry",
-          "x": 0.0504,
-          "y": 0.1404
-        },
-        {
-          "en": "Midget Sex",
-          "zh": "矮人",
-          "role": "entry",
-          "x": 0.055,
-          "y": 0.1432
-        },
-        {
-          "en": "Huge Breasts",
-          "zh": "巨乳",
-          "role": "entry",
-          "x": 0.05,
-          "y": 0.1456
-        },
-        {
-          "en": "Barely Legal",
-          "zh": "合法萝莉",
-          "role": "entry",
-          "x": 0.055,
-          "y": 0.149
-        },
-        {
-          "en": "Big/Tall Women",
-          "zh": "大码／高挑",
-          "role": "entry",
-          "x": 0.0513,
-          "y": 0.1529
-        },
-        {
-          "en": "Hairy",
-          "zh": "多毛",
-          "role": "entry",
-          "x": 0.0562,
-          "y": 0.1561
-        },
-        {
-          "en": "Shaved/Bald",
-          "zh": "体毛修整/光头",
-          "role": "entry",
-          "x": 0.0501,
-          "y": 0.1581
-        },
-        {
-          "en": "Virgins",
-          "zh": "处女",
-          "role": "entry",
-          "x": 0.0507,
-          "y": 0.1612
-        },
-        {
-          "en": "Body Builders",
-          "zh": "肌肉",
-          "role": "entry",
-          "x": 0.043,
-          "y": 0.1664
-        },
-        {
-          "en": "Bears",
-          "zh": "多毛男同",
-          "role": "entry",
-          "x": 0.0497,
-          "y": 0.1641
-        },
-        {
-          "en": "Pregnant Fetish",
-          "zh": "孕妇",
-          "role": "entry",
-          "x": 0.0429,
-          "y": 0.1606
-        },
-        {
-          "en": "Mature",
-          "zh": "熟女",
-          "role": "entry",
-          "x": 0.0345,
-          "y": 0.1609
-        }
-      ],
       "role": "region",
       "x": 18.8048,
       "y": 56.8682,
@@ -5356,14 +4805,85 @@
         "x": 18.8048,
         "y": 56.8682
       },
-      "fontSize": 13
+      "fontSize": 13,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0504,
+          "y": 0.1404,
+          "id": "body_type_fetishes_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.055,
+          "y": 0.1432,
+          "id": "body_type_fetishes_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.05,
+          "y": 0.1456,
+          "id": "body_type_fetishes_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.055,
+          "y": 0.149,
+          "id": "body_type_fetishes_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0513,
+          "y": 0.1529,
+          "id": "body_type_fetishes_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0562,
+          "y": 0.1561,
+          "id": "body_type_fetishes_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0501,
+          "y": 0.1581,
+          "id": "body_type_fetishes_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0507,
+          "y": 0.1612,
+          "id": "body_type_fetishes_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.043,
+          "y": 0.1664,
+          "id": "body_type_fetishes_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.0497,
+          "y": 0.1641,
+          "id": "body_type_fetishes_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.0429,
+          "y": 0.1606,
+          "id": "body_type_fetishes_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.0345,
+          "y": 0.1609,
+          "id": "body_type_fetishes_012"
+        }
+      ]
     },
     {
       "id": "sleep_sex",
-      "en": "Sleep Sex",
-      "zh": "睡眠性爱",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 18.6683,
       "y": 62.66,
@@ -5397,14 +4917,12 @@
         "x": 18.6683,
         "y": 62.66
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "Amnesia_sex",
-      "en": "Amnesia Sex",
-      "zh": "麻醉性爱",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 19.1753,
       "y": 64.4405,
@@ -5438,14 +4956,12 @@
         "x": 19.1753,
         "y": 64.4405
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "balloon_fetishes",
-      "en": "Balloon Fetishes",
-      "zh": "气球癖好",
       "type": "region",
-      "entries": [],
       "role": "region",
       "x": 21.8878,
       "y": 64.8519,
@@ -5479,71 +4995,12 @@
         "x": 21.8878,
         "y": 64.8519
       },
-      "fontSize": 10
+      "fontSize": 10,
+      "entries": []
     },
     {
       "id": "odor_fetishes",
-      "en": "Odor Fetishes",
-      "zh": "气味恋",
       "type": "region",
-      "entries": [
-        {
-          "en": "Sweat",
-          "zh": "汗味",
-          "role": "entry",
-          "x": 0.0434,
-          "y": 0.1803
-        },
-        {
-          "en": "Fart",
-          "zh": "闻屁",
-          "role": "entry",
-          "x": 0.0476,
-          "y": 0.1818
-        },
-        {
-          "en": "Armpit",
-          "zh": "闻腋窝",
-          "role": "entry",
-          "x": 0.0449,
-          "y": 0.1837
-        },
-        {
-          "en": "Vaginal",
-          "zh": "闻阴道",
-          "role": "entry",
-          "x": 0.0535,
-          "y": 0.1855
-        },
-        {
-          "en": "Flowers",
-          "zh": "花香",
-          "role": "entry",
-          "x": 0.0468,
-          "y": 0.1863
-        },
-        {
-          "en": "Perfume/Cologne",
-          "zh": "香水/古龙",
-          "role": "entry",
-          "x": 0.0499,
-          "y": 0.1885
-        },
-        {
-          "en": "Jock Sniffing",
-          "zh": "嗅运动员",
-          "role": "entry",
-          "x": 0.0446,
-          "y": 0.1902
-        },
-        {
-          "en": "Panty Sniffing",
-          "zh": "闻内裤",
-          "role": "entry",
-          "x": 0.0484,
-          "y": 0.1928
-        }
-      ],
       "role": "region",
       "x": 19.2639,
       "y": 68.4203,
@@ -5577,29 +5034,61 @@
         "x": 19.2639,
         "y": 68.4203
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0434,
+          "y": 0.1803,
+          "id": "odor_fetishes_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0476,
+          "y": 0.1818,
+          "id": "odor_fetishes_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0449,
+          "y": 0.1837,
+          "id": "odor_fetishes_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0535,
+          "y": 0.1855,
+          "id": "odor_fetishes_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0468,
+          "y": 0.1863,
+          "id": "odor_fetishes_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0499,
+          "y": 0.1885,
+          "id": "odor_fetishes_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0446,
+          "y": 0.1902,
+          "id": "odor_fetishes_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0484,
+          "y": 0.1928,
+          "id": "odor_fetishes_008"
+        }
+      ]
     },
     {
       "id": "kingdom_of_furrys",
-      "en": "Kingdom of Furrys",
-      "zh": "福瑞王国",
       "type": "region",
-      "entries": [
-        {
-          "en": "Plushies",
-          "zh": "毛绒玩具",
-          "role": "entry",
-          "x": 0.0581,
-          "y": 0.1982
-        },
-        {
-          "en": "District of Fursuiters",
-          "zh": "兽装",
-          "role": "entry",
-          "x": 0.0662,
-          "y": 0.1969
-        }
-      ],
       "role": "region",
       "x": 24.7259,
       "y": 72.2837,
@@ -5633,113 +5122,25 @@
         "x": 24.7259,
         "y": 72.2837
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0581,
+          "y": 0.1982,
+          "id": "kingdom_of_furrys_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0662,
+          "y": 0.1969,
+          "id": "kingdom_of_furrys_002"
+        }
+      ]
     },
     {
       "id": "islands_of_the_imaginary",
-      "en": "Islands of the Imaginary",
-      "zh": "幻想群岛",
       "type": "region",
-      "entries": [
-        {
-          "en": "Zero G Sex",
-          "zh": "零重力性爱",
-          "role": "entry",
-          "x": 0.026,
-          "y": 0.1831
-        },
-        {
-          "en": "Telepathy",
-          "zh": "意念感应/精神交流",
-          "role": "entry",
-          "x": 0.0272,
-          "y": 0.1897
-        },
-        {
-          "en": "Body Swapping",
-          "zh": "身体交换/互换",
-          "role": "entry",
-          "x": 0.0302,
-          "y": 0.1937
-        },
-        {
-          "en": "Tentacle Sex",
-          "zh": "触手性爱",
-          "role": "entry",
-          "x": 0.0201,
-          "y": 0.196
-        },
-        {
-          "en": "Xeno/Aliens",
-          "zh": "异种/外星人",
-          "role": "entry",
-          "x": 0.0268,
-          "y": 0.2005
-        },
-        {
-          "en": "Ectoplasm/Ghosts",
-          "zh": "灵体/鬼魂",
-          "role": "entry",
-          "x": 0.0382,
-          "y": 0.2037
-        },
-        {
-          "en": "Fandom/Shipping",
-          "zh": "同人二创/嗑CP",
-          "role": "entry",
-          "x": 0.0529,
-          "y": 0.2076
-        },
-        {
-          "en": "Magic Academy",
-          "zh": "魔法学院 (HP系)",
-          "role": "entry",
-          "x": 0.0494,
-          "y": 0.2059
-        },
-        {
-          "en": "Vampire/Dark Romance",
-          "zh": "吸血鬼/暗黑罗曼史",
-          "role": "entry",
-          "x": 0.0626,
-          "y": 0.2185
-        },
-        {
-          "en": "Monster Hunter",
-          "zh": "怪物猎人 (猎人x猎物动态)",
-          "role": "entry",
-          "x": 0.0396,
-          "y": 0.2121
-        },
-        {
-          "en": "Fae/High Fantasy",
-          "zh": "仙灵/西德 (非人契约)",
-          "role": "entry",
-          "x": 0.043,
-          "y": 0.2176
-        },
-        {
-          "en": "Eldritch / Overfiend",
-          "zh": "古神/超神 (异种侵蚀)",
-          "role": "entry",
-          "x": 0.0527,
-          "y": 0.2257
-        },
-        {
-          "en": "Angels/Demons",
-          "zh": "天使/恶魔",
-          "role": "entry",
-          "x": 0.0562,
-          "y": 0.2285
-        },
-        {
-          "en": "Blasphemy/Sacrilege",
-          "zh": "神圣亵渎/宗教禁忌",
-          "role": "entry",
-          "x": 0.0597,
-          "y": 0.2302
-        }
-      ],
       "role": "region",
       "x": 17.1688,
       "y": 75.9783,
@@ -5773,129 +5174,99 @@
         "x": 17.1688,
         "y": 75.9783
       },
-      "fontSize": 18
+      "fontSize": 18,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.026,
+          "y": 0.1831,
+          "id": "islands_of_the_imaginary_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0272,
+          "y": 0.1897,
+          "id": "islands_of_the_imaginary_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0302,
+          "y": 0.1937,
+          "id": "islands_of_the_imaginary_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0201,
+          "y": 0.196,
+          "id": "islands_of_the_imaginary_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0268,
+          "y": 0.2005,
+          "id": "islands_of_the_imaginary_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0382,
+          "y": 0.2037,
+          "id": "islands_of_the_imaginary_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0529,
+          "y": 0.2076,
+          "id": "islands_of_the_imaginary_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0494,
+          "y": 0.2059,
+          "id": "islands_of_the_imaginary_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.0626,
+          "y": 0.2185,
+          "id": "islands_of_the_imaginary_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.0396,
+          "y": 0.2121,
+          "id": "islands_of_the_imaginary_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.043,
+          "y": 0.2176,
+          "id": "islands_of_the_imaginary_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.0527,
+          "y": 0.2257,
+          "id": "islands_of_the_imaginary_012"
+        },
+        {
+          "role": "entry",
+          "x": 0.0562,
+          "y": 0.2285,
+          "id": "islands_of_the_imaginary_013"
+        },
+        {
+          "role": "entry",
+          "x": 0.0597,
+          "y": 0.2302,
+          "id": "islands_of_the_imaginary_014"
+        }
+      ]
     }
   ],
   "islands": [
     {
       "id": "Land_of_mundania",
-      "en": "Land of Mundania",
-      "zh": "平凡之地",
       "type": "region",
-      "entries": [
-        {
-          "en": "Internet Porn",
-          "zh": "网络黄片",
-          "role": "entry",
-          "x": 0.158,
-          "y": 0.1891
-        },
-        {
-          "en": "Anal Peninsula",
-          "zh": "肛交半岛",
-          "role": "entry",
-          "x": 0.1507,
-          "y": 0.1934
-        },
-        {
-          "en": "Money Shot Peninsula",
-          "zh": "外射半岛",
-          "role": "entry",
-          "x": 0.1639,
-          "y": 0.1985
-        },
-        {
-          "en": "Facialville",
-          "zh": "坐脸村",
-          "role": "entry",
-          "x": 0.1652,
-          "y": 0.1976
-        },
-        {
-          "en": "Cream Pietopia",
-          "zh": "内射城",
-          "role": "entry",
-          "x": 0.1641,
-          "y": 0.2026
-        },
-        {
-          "en": "Pearl Necklace Village",
-          "zh": "胸射村",
-          "role": "entry",
-          "x": 0.1624,
-          "y": 0.1993
-        },
-        {
-          "en": "Silk Sashes",
-          "zh": "轻SM",
-          "role": "entry",
-          "x": 0.1476,
-          "y": 0.2009
-        },
-        {
-          "en": "Amitie Amoureuse",
-          "zh": "柏拉图",
-          "role": "entry",
-          "x": 0.1568,
-          "y": 0.2048
-        },
-        {
-          "en": "Dry Humping",
-          "zh": "隔衣干磨",
-          "role": "entry",
-          "x": 0.1449,
-          "y": 0.2049
-        },
-        {
-          "en": "Oral Lowlands",
-          "zh": "口交湿地",
-          "role": "entry",
-          "x": 0.1426,
-          "y": 0.207
-        },
-        {
-          "en": "Food & Sex",
-          "zh": "食物调情",
-          "role": "entry",
-          "x": 0.1378,
-          "y": 0.21
-        },
-        {
-          "en": "Plains of Sexual Positions",
-          "zh": "姿势平原",
-          "role": "entry",
-          "x": 0.1542,
-          "y": 0.2086
-        },
-        {
-          "en": "Couples Sex Toys",
-          "zh": "双人玩具",
-          "role": "entry",
-          "x": 0.1408,
-          "y": 0.2135
-        },
-        {
-          "en": "Phone Sex",
-          "zh": "语言做爱",
-          "role": "entry",
-          "x": 0.1648,
-          "y": 0.2068
-        },
-        {
-          "en": "Missionary Outpost",
-          "zh": "传教士关口",
-          "role": "entry",
-          "x": 0.158,
-          "y": 0.2152
-        },
-        {
-          "en": "Citadel of Chastity",
-          "zh": "禁欲之都",
-          "role": "entry",
-          "x": 0.1516,
-          "y": 0.222
-        }
-      ],
       "role": "region",
       "x": 61.6431,
       "y": 76.9504,
@@ -5929,85 +5300,109 @@
         "x": 61.6431,
         "y": 76.9504
       },
-      "fontSize": 15
+      "fontSize": 15,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.158,
+          "y": 0.1891,
+          "id": "Land_of_mundania_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1507,
+          "y": 0.1934,
+          "id": "Land_of_mundania_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1639,
+          "y": 0.1985,
+          "id": "Land_of_mundania_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1652,
+          "y": 0.1976,
+          "id": "Land_of_mundania_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1641,
+          "y": 0.2026,
+          "id": "Land_of_mundania_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1624,
+          "y": 0.1993,
+          "id": "Land_of_mundania_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1476,
+          "y": 0.2009,
+          "id": "Land_of_mundania_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1568,
+          "y": 0.2048,
+          "id": "Land_of_mundania_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1449,
+          "y": 0.2049,
+          "id": "Land_of_mundania_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.1426,
+          "y": 0.207,
+          "id": "Land_of_mundania_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.1378,
+          "y": 0.21,
+          "id": "Land_of_mundania_011"
+        },
+        {
+          "role": "entry",
+          "x": 0.1542,
+          "y": 0.2086,
+          "id": "Land_of_mundania_012"
+        },
+        {
+          "role": "entry",
+          "x": 0.1408,
+          "y": 0.2135,
+          "id": "Land_of_mundania_013"
+        },
+        {
+          "role": "entry",
+          "x": 0.1648,
+          "y": 0.2068,
+          "id": "Land_of_mundania_014"
+        },
+        {
+          "role": "entry",
+          "x": 0.158,
+          "y": 0.2152,
+          "id": "Land_of_mundania_015"
+        },
+        {
+          "role": "entry",
+          "x": 0.1516,
+          "y": 0.222,
+          "id": "Land_of_mundania_016"
+        }
+      ]
     },
     {
       "id": "commerce_island",
-      "en": "Commerce Island",
-      "zh": "商业岛",
       "type": "island",
-      "entries": [
-        {
-          "en": "Geisha",
-          "zh": "艺伎",
-          "role": "entry",
-          "x": 0.197,
-          "y": 0.1639
-        },
-        {
-          "en": "Strippers",
-          "zh": "脱衣舞娘",
-          "role": "entry",
-          "x": 0.2032,
-          "y": 0.1662
-        },
-        {
-          "en": "Prostitution",
-          "zh": "卖淫",
-          "role": "entry",
-          "x": 0.1993,
-          "y": 0.1682
-        },
-        {
-          "en": "Gigolos",
-          "zh": "男模",
-          "role": "entry",
-          "x": 0.2123,
-          "y": 0.1676
-        },
-        {
-          "en": "Pro Phone Sex",
-          "zh": "电话性爱服务",
-          "role": "entry",
-          "x": 0.2,
-          "y": 0.1708
-        },
-        {
-          "en": "Peep Shows",
-          "zh": "偷窥秀",
-          "role": "entry",
-          "x": 0.2122,
-          "y": 0.1722
-        },
-        {
-          "en": "Massage Parlor",
-          "zh": "按摩院",
-          "role": "entry",
-          "x": 0.2035,
-          "y": 0.1732
-        },
-        {
-          "en": "Professional Submissives",
-          "zh": "职业受虐者",
-          "role": "entry",
-          "x": 0.2051,
-          "y": 0.1756
-        },
-        {
-          "en": "Pro Dommes",
-          "zh": "职业施虐者",
-          "role": "entry",
-          "x": 0.1995,
-          "y": 0.1779
-        },
-        {
-          "en": "Escorts",
-          "zh": "陪玩",
-          "role": "entry",
-          "x": 0.2123,
-          "y": 0.1784
-        }
-      ],
       "role": "region",
       "x": 82.9335,
       "y": 63.5706,
@@ -6041,92 +5436,73 @@
         "x": 82.9335,
         "y": 63.5706
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.197,
+          "y": 0.1639,
+          "id": "commerce_island_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.2032,
+          "y": 0.1662,
+          "id": "commerce_island_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1993,
+          "y": 0.1682,
+          "id": "commerce_island_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.2123,
+          "y": 0.1676,
+          "id": "commerce_island_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.2,
+          "y": 0.1708,
+          "id": "commerce_island_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.2122,
+          "y": 0.1722,
+          "id": "commerce_island_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.2035,
+          "y": 0.1732,
+          "id": "commerce_island_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.2051,
+          "y": 0.1756,
+          "id": "commerce_island_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1995,
+          "y": 0.1779,
+          "id": "commerce_island_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.2123,
+          "y": 0.1784,
+          "id": "commerce_island_010"
+        }
+      ]
     },
     {
       "id": "Terra_de_Solo",
-      "en": "Terra de Solo",
-      "zh": "单人之地",
       "type": "island",
-      "entries": [
-        {
-          "en": "Autofellatio/Autolingus",
-          "zh": "口交自己",
-          "role": "entry",
-          "x": 0.1853,
-          "y": 0.177
-        },
-        {
-          "en": "Improvised Toys",
-          "zh": "自制玩具",
-          "role": "entry",
-          "x": 0.1729,
-          "y": 0.1768
-        },
-        {
-          "en": "Hairbrushed",
-          "zh": "梳子",
-          "role": "entry",
-          "x": 0.1797,
-          "y": 0.1778
-        },
-        {
-          "en": "Electric Toothbrushes",
-          "zh": "电动牙刷",
-          "role": "entry",
-          "x": 0.1838,
-          "y": 0.1823
-        },
-        {
-          "en": "Showerhead",
-          "zh": "淋浴头",
-          "role": "entry",
-          "x": 0.1828,
-          "y": 0.186
-        },
-        {
-          "en": "Masturbatory Toys",
-          "zh": "自慰玩具",
-          "role": "entry",
-          "x": 0.176,
-          "y": 0.1845
-        },
-        {
-          "en": "Dildos",
-          "zh": "假鸡把/飞机杯",
-          "role": "entry",
-          "x": 0.1695,
-          "y": 0.1869
-        },
-        {
-          "en": "Vibrators",
-          "zh": "振动玩具",
-          "role": "entry",
-          "x": 0.1739,
-          "y": 0.1878
-        },
-        {
-          "en": "Hitachi",
-          "zh": "AV棒",
-          "role": "entry",
-          "x": 0.1773,
-          "y": 0.1895
-        },
-        {
-          "en": "Magic Wand",
-          "zh": "静电棒",
-          "role": "entry",
-          "x": 0.1701,
-          "y": 0.1905
-        },
-        {
-          "en": "Suction Device",
-          "zh": "吮吸式",
-          "role": "entry",
-          "x": 0.1804,
-          "y": 0.1908
-        }
-      ],
       "role": "region",
       "x": 71.3094,
       "y": 67.1711,
@@ -6160,57 +5536,79 @@
         "x": 71.3094,
         "y": 67.1711
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1853,
+          "y": 0.177,
+          "id": "Terra_de_Solo_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1729,
+          "y": 0.1768,
+          "id": "Terra_de_Solo_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1797,
+          "y": 0.1778,
+          "id": "Terra_de_Solo_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1838,
+          "y": 0.1823,
+          "id": "Terra_de_Solo_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1828,
+          "y": 0.186,
+          "id": "Terra_de_Solo_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.176,
+          "y": 0.1845,
+          "id": "Terra_de_Solo_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1695,
+          "y": 0.1869,
+          "id": "Terra_de_Solo_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1739,
+          "y": 0.1878,
+          "id": "Terra_de_Solo_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1773,
+          "y": 0.1895,
+          "id": "Terra_de_Solo_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.1701,
+          "y": 0.1905,
+          "id": "Terra_de_Solo_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.1804,
+          "y": 0.1908,
+          "id": "Terra_de_Solo_011"
+        }
+      ]
     },
     {
       "id": "island_of_sexual_phobias",
-      "en": "Island of Sexual Phobias",
-      "zh": "性恐惧症之岛",
       "type": "island",
-      "entries": [
-        {
-          "en": "Homophobia",
-          "zh": "恐同",
-          "role": "entry",
-          "x": 0.1646,
-          "y": 0.2295
-        },
-        {
-          "en": "Transphobia",
-          "zh": "恐跨性别",
-          "role": "entry",
-          "x": 0.1603,
-          "y": 0.2329
-        },
-        {
-          "en": "Primeisodophobia",
-          "zh": "恐失去贞洁",
-          "role": "entry",
-          "x": 0.172,
-          "y": 0.2313
-        },
-        {
-          "en": "Coitophobia",
-          "zh": "插入恐惧症",
-          "role": "entry",
-          "x": 0.1703,
-          "y": 0.2346
-        },
-        {
-          "en": "Erotophobia",
-          "zh": "性恐惧症",
-          "role": "entry",
-          "x": 0.1633,
-          "y": 0.2397
-        },
-        {
-          "en": "Antimiscegeny",
-          "zh": "恐跨种族",
-          "role": "entry",
-          "x": 0.1672,
-          "y": 0.2431
-        }
-      ],
       "role": "region",
       "x": 67.5974,
       "y": 87.2383,
@@ -6244,93 +5642,50 @@
         "x": 67.5974,
         "y": 87.2383
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1646,
+          "y": 0.2295,
+          "id": "island_of_sexual_phobias_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1603,
+          "y": 0.2329,
+          "id": "island_of_sexual_phobias_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.172,
+          "y": 0.2313,
+          "id": "island_of_sexual_phobias_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1703,
+          "y": 0.2346,
+          "id": "island_of_sexual_phobias_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1633,
+          "y": 0.2397,
+          "id": "island_of_sexual_phobias_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1672,
+          "y": 0.2431,
+          "id": "island_of_sexual_phobias_006"
+        }
+      ]
     },
     {
       "id": "island_of_non_consent",
-      "en": "Island of Non-Consent",
-      "zh": "非自愿之岛",
       "type": "island",
       "warning": true,
-      "entries": [
-        {
-          "en": "Frotteurism",
-          "zh": "摩擦癖",
-          "role": "entry",
-          "x": 0.1453,
-          "y": 0.2312
-        },
-        {
-          "en": "Rape",
-          "zh": "强奸",
-          "role": "entry",
-          "x": 0.1473,
-          "y": 0.2335
-        },
-        {
-          "en": "Pedophilia",
-          "zh": "恋童癖",
-          "role": "entry",
-          "x": 0.1524,
-          "y": 0.2341
-        },
-        {
-          "en": "Sexual Harassment",
-          "zh": "性骚扰",
-          "role": "entry",
-          "x": 0.1488,
-          "y": 0.2366
-        },
-        {
-          "en": "Roofies",
-          "zh": "药奸",
-          "role": "entry",
-          "x": 0.1451,
-          "y": 0.2397
-        },
-        {
-          "en": "Stalking",
-          "zh": "跟踪",
-          "role": "entry",
-          "x": 0.1543,
-          "y": 0.2402
-        },
-        {
-          "en": "Peeping Tom",
-          "zh": "偷窥/偷拍",
-          "role": "entry",
-          "x": 0.1579,
-          "y": 0.2497
-        },
-        {
-          "en": "Spy Cams",
-          "zh": "隐藏摄像头",
-          "role": "entry",
-          "x": 0.1503,
-          "y": 0.242
-        },
-        {
-          "en": "Sex Trafficking",
-          "zh": "性贩运",
-          "role": "entry",
-          "x": 0.1446,
-          "y": 0.2432
-        },
-        {
-          "en": "Infibulation",
-          "zh": "女阴残割",
-          "role": "entry",
-          "x": 0.1491,
-          "y": 0.2465
-        },
-        {
-          "en": "Child Sex Tourism",
-          "zh": "儿童性旅游",
-          "role": "entry",
-          "x": 0.1475,
-          "y": 0.2482
-        }
-      ],
       "role": "region",
       "x": 60.1562,
       "y": 88.6426,
@@ -6364,85 +5719,79 @@
         "x": 60.1562,
         "y": 88.6426
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1453,
+          "y": 0.2312,
+          "id": "island_of_non_consent_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1473,
+          "y": 0.2335,
+          "id": "island_of_non_consent_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1524,
+          "y": 0.2341,
+          "id": "island_of_non_consent_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1488,
+          "y": 0.2366,
+          "id": "island_of_non_consent_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1451,
+          "y": 0.2397,
+          "id": "island_of_non_consent_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1543,
+          "y": 0.2402,
+          "id": "island_of_non_consent_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1579,
+          "y": 0.2497,
+          "id": "island_of_non_consent_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1503,
+          "y": 0.242,
+          "id": "island_of_non_consent_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.1446,
+          "y": 0.2432,
+          "id": "island_of_non_consent_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.1491,
+          "y": 0.2465,
+          "id": "island_of_non_consent_010"
+        },
+        {
+          "role": "entry",
+          "x": 0.1475,
+          "y": 0.2482,
+          "id": "island_of_non_consent_011"
+        }
+      ]
     },
     {
       "id": "island_of_uniform_fetishes",
-      "en": "Island of Uniform Fetishes",
-      "zh": "制服恋之岛",
       "type": "island",
-      "entries": [
-        {
-          "en": "JK / DK / School Uniform",
-          "zh": "JK/DK/学生制服",
-          "role": "entry",
-          "x": 0.0796,
-          "y": 0.2389
-        },
-        {
-          "en": "Hanfu / Traditional Gown",
-          "zh": "汉服/古风华服",
-          "role": "entry",
-          "x": 0.0826,
-          "y": 0.2421
-        },
-        {
-          "en": "Lolita Fashion",
-          "zh": "洛丽塔/精致洋装",
-          "role": "entry",
-          "x": 0.0867,
-          "y": 0.2452
-        },
-        {
-          "en": "Medical/Lab Coats",
-          "zh": "医疗／实验室服",
-          "role": "entry",
-          "x": 0.0819,
-          "y": 0.2307
-        },
-        {
-          "en": "Gas Masks",
-          "zh": "毒气面罩",
-          "role": "entry",
-          "x": 0.0879,
-          "y": 0.2338
-        },
-        {
-          "en": "Military",
-          "zh": "军装",
-          "role": "entry",
-          "x": 0.0749,
-          "y": 0.2411
-        },
-        {
-          "en": "School",
-          "zh": "学生制服",
-          "role": "entry",
-          "x": 0.0767,
-          "y": 0.2363
-        },
-        {
-          "en": "Kilts",
-          "zh": "苏格兰裙",
-          "role": "entry",
-          "x": 0.0925,
-          "y": 0.2406
-        },
-        {
-          "en": "Scout",
-          "zh": "童子军制服",
-          "role": "entry",
-          "x": 0.0804,
-          "y": 0.2439
-        },
-        {
-          "en": "Township of Nazi Imagination",
-          "zh": "纳粹制服幻想",
-          "role": "entry",
-          "x": 0.0761,
-          "y": 0.2456
-        }
-      ],
       "role": "region",
       "x": 33.7568,
       "y": 87.9321,
@@ -6476,84 +5825,79 @@
         "x": 33.7568,
         "y": 87.9321
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.0796,
+          "y": 0.2389,
+          "id": "island_of_uniform_fetishes_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.0826,
+          "y": 0.2421,
+          "id": "island_of_uniform_fetishes_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.0867,
+          "y": 0.2452,
+          "id": "island_of_uniform_fetishes_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.0819,
+          "y": 0.2307,
+          "id": "island_of_uniform_fetishes_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.0879,
+          "y": 0.2338,
+          "id": "island_of_uniform_fetishes_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.0749,
+          "y": 0.2411,
+          "id": "island_of_uniform_fetishes_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.0767,
+          "y": 0.2363,
+          "id": "island_of_uniform_fetishes_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.0925,
+          "y": 0.2406,
+          "id": "island_of_uniform_fetishes_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.0804,
+          "y": 0.2439,
+          "id": "island_of_uniform_fetishes_009"
+        },
+        {
+          "role": "entry",
+          "x": 0.0761,
+          "y": 0.2456,
+          "id": "island_of_uniform_fetishes_010"
+        }
+      ]
     }
   ],
   "warning_regions": [
     {
       "id": "Land_of_myth",
-      "en": "Land of Myth",
-      "zh": "传说之地",
       "type": "warning_region",
       "warning": true,
       "role": "region",
       "x": 82.5587,
       "y": 26.9693,
-      "entries": [
-        {
-          "en": "Snuff Films",
-          "zh": "虐杀影片",
-          "role": "entry",
-          "x": 0.1898,
-          "y": 0.0549
-        },
-        {
-          "en": "Killed as Sentry",
-          "zh": "小兵被摸哨",
-          "role": "entry",
-          "x": 0.2038,
-          "y": 0.0539
-        },
-        {
-          "en": "Donkey Punch",
-          "zh": "击打后脑勺",
-          "role": "entry",
-          "x": 0.2005,
-          "y": 0.0603
-        },
-        {
-          "en": "Jelly Donut",
-          "zh": "颜射+鼻血",
-          "role": "entry",
-          "x": 0.1992,
-          "y": 0.0686
-        },
-        {
-          "en": "Dirty Sanchez",
-          "zh": "肛交+粪画",
-          "role": "entry",
-          "x": 0.2146,
-          "y": 0.0641
-        },
-        {
-          "en": "Angry Dragon",
-          "zh": "口射+锤后脑勺至精液从鼻子流出",
-          "role": "entry",
-          "x": 0.2125,
-          "y": 0.0875
-        },
-        {
-          "en": "Gerbiling",
-          "zh": "沙鼠入肛",
-          "role": "entry",
-          "x": 0.2177,
-          "y": 0.0782
-        },
-        {
-          "en": "Bugchasing",
-          "zh": "主动寻求感染",
-          "role": "entry",
-          "x": 0.1905,
-          "y": 0.0822
-        },
-        {
-          "en": "Urban Dictionary Bay",
-          "zh": "百度贴吧",
-          "role": "entry",
-          "x": 0.2187,
-          "y": 0.0715
-        }
-      ],
       "boundary": [
         {
           "x": 74.0254,
@@ -6584,61 +5928,71 @@
         "x": 82.5587,
         "y": 26.9693
       },
-      "fontSize": 18
+      "fontSize": 18,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1898,
+          "y": 0.0549,
+          "id": "Land_of_myth_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.2038,
+          "y": 0.0539,
+          "id": "Land_of_myth_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.2005,
+          "y": 0.0603,
+          "id": "Land_of_myth_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1992,
+          "y": 0.0686,
+          "id": "Land_of_myth_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.2146,
+          "y": 0.0641,
+          "id": "Land_of_myth_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.2125,
+          "y": 0.0875,
+          "id": "Land_of_myth_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.2177,
+          "y": 0.0782,
+          "id": "Land_of_myth_007"
+        },
+        {
+          "role": "entry",
+          "x": 0.1905,
+          "y": 0.0822,
+          "id": "Land_of_myth_008"
+        },
+        {
+          "role": "entry",
+          "x": 0.2187,
+          "y": 0.0715,
+          "id": "Land_of_myth_009"
+        }
+      ]
     },
     {
       "id": "Bestiality",
-      "en": "Bestiality",
-      "zh": "兽交",
       "type": "warning_region",
       "warning": true,
       "role": "region",
       "x": 53.8786,
       "y": 18.1499,
-      "entries": [
-        {
-          "en": "Horses",
-          "zh": "马",
-          "role": "entry",
-          "x": 0.1266,
-          "y": 0.0404
-        },
-        {
-          "en": "Dogs",
-          "zh": "狗",
-          "role": "entry",
-          "x": 0.1367,
-          "y": 0.038
-        },
-        {
-          "en": "Sheep",
-          "zh": "羊",
-          "role": "entry",
-          "x": 0.143,
-          "y": 0.0387
-        },
-        {
-          "en": "Goats",
-          "zh": "山羊",
-          "role": "entry",
-          "x": 0.1416,
-          "y": 0.0432
-        },
-        {
-          "en": "Octopi/Squid",
-          "zh": "章鱼／鱿鱼",
-          "role": "entry",
-          "x": 0.1315,
-          "y": 0.0495
-        },
-        {
-          "en": "Snakes",
-          "zh": "蛇",
-          "role": "entry",
-          "x": 0.1325,
-          "y": 0.0564
-        }
-      ],
       "boundary": [
         {
           "x": 49.7696,
@@ -6669,68 +6023,53 @@
         "x": 53.8786,
         "y": 18.1499
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1266,
+          "y": 0.0404,
+          "id": "Bestiality_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1367,
+          "y": 0.038,
+          "id": "Bestiality_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.143,
+          "y": 0.0387,
+          "id": "Bestiality_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1416,
+          "y": 0.0432,
+          "id": "Bestiality_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1315,
+          "y": 0.0495,
+          "id": "Bestiality_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1325,
+          "y": 0.0564,
+          "id": "Bestiality_006"
+        }
+      ]
     },
     {
       "id": "Incest",
-      "en": "Incest",
-      "zh": "乱伦",
       "type": "warning_region",
       "warning": true,
       "role": "region",
       "x": 63.9648,
       "y": 15.2482,
-      "entries": [
-        {
-          "en": "Mother/Son",
-          "zh": "母子",
-          "role": "entry",
-          "x": 0.1571,
-          "y": 0.037
-        },
-        {
-          "en": "Father/Daughter",
-          "zh": "父女",
-          "role": "entry",
-          "x": 0.1525,
-          "y": 0.0398
-        },
-        {
-          "en": "Sibling",
-          "zh": "兄弟姐妹",
-          "role": "entry",
-          "x": 0.1675,
-          "y": 0.0377
-        },
-        {
-          "en": "Grandparents",
-          "zh": "祖父母",
-          "role": "entry",
-          "x": 0.1626,
-          "y": 0.0416
-        },
-        {
-          "en": "Step Family",
-          "zh": "继亲",
-          "role": "entry",
-          "x": 0.1502,
-          "y": 0.0458
-        },
-        {
-          "en": "Aunt/Uncle",
-          "zh": "姑叔",
-          "role": "entry",
-          "x": 0.1595,
-          "y": 0.0463
-        },
-        {
-          "en": "Kissing Cousin",
-          "zh": "远房表亲",
-          "role": "entry",
-          "x": 0.1627,
-          "y": 0.0471
-        }
-      ],
       "boundary": [
         {
           "x": 60.084,
@@ -6761,33 +6100,59 @@
         "x": 63.9648,
         "y": 15.2482
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1571,
+          "y": 0.037,
+          "id": "Incest_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1525,
+          "y": 0.0398,
+          "id": "Incest_002"
+        },
+        {
+          "role": "entry",
+          "x": 0.1675,
+          "y": 0.0377,
+          "id": "Incest_003"
+        },
+        {
+          "role": "entry",
+          "x": 0.1626,
+          "y": 0.0416,
+          "id": "Incest_004"
+        },
+        {
+          "role": "entry",
+          "x": 0.1502,
+          "y": 0.0458,
+          "id": "Incest_005"
+        },
+        {
+          "role": "entry",
+          "x": 0.1595,
+          "y": 0.0463,
+          "id": "Incest_006"
+        },
+        {
+          "role": "entry",
+          "x": 0.1627,
+          "y": 0.0471,
+          "id": "Incest_007"
+        }
+      ]
     },
     {
       "id": "Necrophilia",
-      "en": "Necrophilia",
-      "zh": "恋尸癖",
       "type": "warning_region",
       "warning": true,
       "role": "region",
       "x": 60.3458,
       "y": 20.6422,
-      "entries": [
-        {
-          "en": "Freshies",
-          "zh": "新鲜尸体",
-          "role": "entry",
-          "x": 0.1461,
-          "y": 0.0514
-        },
-        {
-          "en": "Moldie",
-          "zh": "腐烂尸体",
-          "role": "entry",
-          "x": 0.1522,
-          "y": 0.0609
-        }
-      ],
       "boundary": [
         {
           "x": 56.797,
@@ -6818,26 +6183,29 @@
         "x": 60.3458,
         "y": 20.6422
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1461,
+          "y": 0.0514,
+          "id": "Necrophilia_001"
+        },
+        {
+          "role": "entry",
+          "x": 0.1522,
+          "y": 0.0609,
+          "id": "Necrophilia_002"
+        }
+      ]
     },
     {
       "id": "Spitting_Fetish",
-      "en": "Spitting Fetish",
-      "zh": "吐口水恋",
       "type": "warning_region",
       "warning": true,
       "role": "region",
       "x": 58.8483,
       "y": 24.7004,
-      "entries": [
-        {
-          "en": "Vomit",
-          "zh": "呕吐恋",
-          "role": "entry",
-          "x": 0.1497,
-          "y": 0.0692
-        }
-      ],
       "boundary": [
         {
           "x": 55.3235,
@@ -6868,26 +6236,23 @@
         "x": 58.8483,
         "y": 24.7004
       },
-      "fontSize": 11
+      "fontSize": 11,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1497,
+          "y": 0.0692,
+          "id": "Spitting_Fetish_001"
+        }
+      ]
     },
     {
       "id": "Cannibalism",
-      "en": "Cannibalism",
-      "zh": "食人",
       "type": "warning_region",
       "warning": true,
       "role": "region",
       "x": 69.8199,
       "y": 18.8561,
-      "entries": [
-        {
-          "en": "Vorarephilia",
-          "zh": "恋噬",
-          "role": "entry",
-          "x": 0.175,
-          "y": 0.051
-        }
-      ],
       "boundary": [
         {
           "x": 68.2448,
@@ -6918,26 +6283,23 @@
         "x": 69.8199,
         "y": 18.8561
       },
-      "fontSize": 12
+      "fontSize": 12,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.175,
+          "y": 0.051,
+          "id": "Cannibalism_001"
+        }
+      ]
     },
     {
       "id": "Castration_Fetish",
-      "en": "Castration Fetish",
-      "zh": "阉割恋",
       "type": "warning_region",
       "warning": true,
       "role": "region",
       "x": 69.3368,
       "y": 25.8134,
-      "entries": [
-        {
-          "en": "Nullification",
-          "zh": "器官切除幻想",
-          "role": "entry",
-          "x": 0.1702,
-          "y": 0.065
-        }
-      ],
       "boundary": [
         {
           "x": 64.6178,
@@ -6968,7 +6330,15 @@
         "x": 69.3368,
         "y": 25.8134
       },
-      "fontSize": 13
+      "fontSize": 13,
+      "entries": [
+        {
+          "role": "entry",
+          "x": 0.1702,
+          "y": 0.065,
+          "id": "Castration_Fetish_001"
+        }
+      ]
     }
   ]
 }
