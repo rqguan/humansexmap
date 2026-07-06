@@ -19,7 +19,7 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
 #vp{width:100vw;height:100vh;overflow:hidden;position:relative}
 #vp.leaflet-container{background:transparent;font-family:var(--font)}
 #vp:focus{outline:none}
-#world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform;contain:layout;pointer-events:none}
+#world{position:absolute;top:0;left:0;transform-origin:0 0;contain:layout;pointer-events:none}
 #world .lbl{pointer-events:auto}
 #geo-svg{position:absolute;top:0;left:0;pointer-events:none;overflow:visible}
 
@@ -39,15 +39,15 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
 .lbl:hover{background:rgba(255,255,255,.2)}
 .lbl:active{background:rgba(255,255,255,.3)}
 
-.lbl-rgn{transform:scale(var(--inv,1));transform-origin:50% 50%}
 .lbl-ent{
-  transform:translateX(-50%) scale(var(--inv,1));transform-origin:0 0;
+  transform:translateX(-50%);transform-origin:0 0;
   flex-direction:column;align-items:center;text-align:center;gap:2px;padding:0 1px 2px;
 }
 .lbl-ent .ltxt{white-space:normal;word-break:break-all;max-width:74px;text-align:center;line-height:1.25}
 
-/* Dots */
-.dot{flex-shrink:0;border-radius:50%;border:1px solid rgba(0,0,0,.12);transition:background .15s}
+/* Dots (position:relative + ::after enlarges the tap target on touch) */
+.dot{flex-shrink:0;border-radius:50%;border:1px solid rgba(0,0,0,.12);transition:background .15s;position:relative}
+.dot::after{content:'';position:absolute;inset:-9px}
 .lbl-rgn .dot{width:8px;height:8px}
 .lbl-ent .dot{width:6px;height:6px}
 .lbl[data-s="0"] .dot{background:rgba(130,130,130,.45)}
@@ -141,6 +141,16 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
 .sh-btn.cls:hover{color:rgba(200,160,90,.85)}
 .sh-note{font-size:9px;color:rgba(200,160,90,.35);margin-top:7px;line-height:1.6}
 
+/* ── Annotation tooltip (desc from lang files) ── */
+#tip{
+  position:fixed;display:none;z-index:1500;max-width:280px;
+  background:var(--ui-bg);border:1px solid var(--bdr);border-radius:8px;
+  padding:9px 11px;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.5);
+}
+#tip .tip-name{font-size:12px;color:var(--acc);font-weight:600;margin-bottom:4px}
+#tip .tip-desc{font-size:11px;color:rgba(200,160,90,.88);line-height:1.65}
+#geo-svg .geo-tip{pointer-events:auto;cursor:pointer}
+
 #toast{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);
        background:rgba(67,160,71,.92);color:#fff;padding:8px 22px;border-radius:20px;
        font-size:12px;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
@@ -227,6 +237,11 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
       <div class="sh-note" id="sh-note">链接编码了所有选择，不经过任何服务器。</div>
     </div>
 
+    <div id="tip">
+      <div class="tip-name" id="tip-name"></div>
+      <div class="tip-desc" id="tip-desc"></div>
+    </div>
+
     <div id="toast"></div>
     <div id="attr">
       原作 <a href="https://humansexmap.com" target="_blank" rel="noopener">humansexmap.com</a>
@@ -286,8 +301,9 @@ let lastZoom  = -1;
 
 let zoom = 1;               // app scale (CSS px per SVG unit) — kept in sync with Leaflet
 let map = null, tileLayer = null;
-let didMove = false;
+let downXY = null;          // pointerdown position — tap-vs-drag guard
 let curLOD = '', curGeoVis = null;
+const TOUCH_MODE = (() => { try { return matchMedia('(hover: none)').matches; } catch { return false; } })();
 
 /* ═══════════════════════════════════════════════════════════
    HELPERS
@@ -376,9 +392,20 @@ function buildItems(d) {
 /* ═══════════════════════════════════════════════════════════
    GEO SVG — curved (zh) + straight fallback (all other langs)
 ═══════════════════════════════════════════════════════════ */
+function bindGeoTip(elm, id) {
+  elm.classList.add('geo-tip');
+  if (TOUCH_MODE) {
+    elm.addEventListener('click', e => { e.stopPropagation(); if (!movedSince(e)) showTip(elm, id); });
+  } else {
+    elm.addEventListener('mouseenter', () => showTip(elm, id));
+    elm.addEventListener('mouseleave', hideTip);
+  }
+}
+
 function buildGeoSVG() {
   const svg = G('geo-svg');
   svg.setAttribute('width', SVG_W); svg.setAttribute('height', SVG_H);
+  svg.setAttribute('viewBox', `0 0 ${SVG_W} ${SVG_H}`);   // lets CSS size rescale vectors crisply
   const NS   = 'http://www.w3.org/2000/svg';
   const FONT = '-apple-system,BlinkMacSystemFont,PingFang SC,Noto Sans SC,sans-serif';
   const defs = document.createElementNS(NS, 'defs');
@@ -418,7 +445,9 @@ function buildGeoSVG() {
       return t;
     };
     svg.appendChild(mkCurved(true));
-    svg.appendChild(mkCurved(false));
+    const curvedFill = mkCurved(false);
+    svg.appendChild(curvedFill);
+    bindGeoTip(curvedFill, g.id);
 
     // ── Straight (all other languages) ──
     const mkStraight = isHalo => {
@@ -433,6 +462,7 @@ function buildGeoSVG() {
     };
     svg.appendChild(mkStraight(true));
     svg.appendChild(mkStraight(false));
+    bindGeoTip(g.stFill, g.id);
 
     // Fill straight tspans for initial language (may not be zh)
     rebuildGeoStraight(g);
@@ -514,13 +544,10 @@ function buildLabels() {
     const el  = document.createElement('div');
     el.className = ['lbl', isR?'lbl-rgn':'lbl-ent', item.warn?'lbl-warn':''].filter(Boolean).join(' ');
 
-    if (isR) {
-      el.style.left = (p.cx - p.W/2) + 'px';
-      el.style.top  = (p.cy - p.H/2) + 'px';
-    } else {
-      el.style.left = item.ax + 'px';
-      el.style.top  = item.ay + 'px';
-    }
+    el._id = item.id; el._ent = !isR;
+    if (isR) { el._ax = p.cx; el._ay = p.cy; el._w = p.W; el._h = p.H; }
+    else     { el._ax = item.ax; el._ay = item.ay; }
+    posLabel(el, bakedZoom);
 
     el.dataset.s = String(states[i]);
 
@@ -531,8 +558,13 @@ function buildLabels() {
 
     el.appendChild(dot); el.appendChild(txt);
     el.addEventListener('click', e => {
-      if (didMove) return;
       e.stopPropagation();
+      if (movedSince(e)) return;                       // was a drag, not a tap
+      if (TOUCH_MODE && e.target.closest('.ltxt')) {   // mobile: tap on text = annotation
+        showTip(el, item.id);
+        return;
+      }
+      hideTip();
       const next = (states[i] + 1) % 5;
       states[i] = next;
       el.dataset.s = String(next);
@@ -540,11 +572,44 @@ function buildLabels() {
     container.appendChild(el);
     return el;
   });
+
+  // Desktop: hover shows the annotation from the language file
+  if (!TOUCH_MODE) {
+    container.addEventListener('mouseover', e => {
+      const l = e.target.closest('.lbl'); if (l) showTip(l, l._id);
+    });
+    container.addEventListener('mouseout', e => {
+      if (e.target.closest('.lbl')) hideTip();
+    });
+  }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   ANNOTATION TOOLTIP (desc from lang/*.json)
+═══════════════════════════════════════════════════════════ */
+const movedSince = e => downXY && (Math.abs(e.clientX-downXY.x) + Math.abs(e.clientY-downXY.y) > 8);
+
+function showTip(el, id) {
+  const d = langData[id];
+  if (!d || !d.desc) { hideTip(); return; }
+  const tip = G('tip');
+  G('tip-name').textContent = d.name || id;
+  G('tip-desc').textContent = d.desc;
+  tip.style.display = 'block';
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = r.left + r.width/2 - tw/2;
+  x = Math.max(8, Math.min(x, window.innerWidth - tw - 8));
+  let y = r.top - th - 8;
+  if (y < 8) y = Math.min(r.bottom + 8, window.innerHeight - th - 8);
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hideTip() { const t = G('tip'); if (t) t.style.display = 'none'; }
 
 /* ═══════════════════════════════════════════════════════════
    TITLE CARD
 ═══════════════════════════════════════════════════════════ */
+let tcBase = null;
 function setupTitleCard(d) {
   const ta = d?._meta?.title_area, tc = G('title-card');
   if (!ta?.tl || !ta?.tr || !ta?.bl) { tc.style.display='none'; return; }
@@ -552,13 +617,20 @@ function setupTitleCard(d) {
   const xs=corners.map(c=>c.x), ys=corners.map(c=>c.y);
   const xMin=Math.min(...xs), xMax=Math.max(...xs);
   const yMin=Math.min(...ys), yMax=Math.max(...ys);
-  const W=xMax-xMin, H=yMax-yMin;
-  tc.style.cssText = `left:${xMin}px;top:${yMin}px;width:${W}px;height:${H}px;display:flex;transform:none`;
-  const base = W/11;
+  tcBase = { x:xMin, y:yMin, w:xMax-xMin, h:yMax-yMin };
+  layoutTitleCard(bakedZoom);
+  updateTitleCard();
+}
+
+// (Re)apply title card geometry at the current baked scale
+function layoutTitleCard(s) {
+  if (!tcBase) return;
+  const tc = G('title-card');
+  tc.style.cssText = `left:${tcBase.x*s}px;top:${tcBase.y*s}px;width:${tcBase.w*s}px;height:${tcBase.h*s}px;display:flex;transform:none`;
+  const base = tcBase.w*s/11;
   G('tc-main').style.fontSize  = (base*0.92)+'px';
   G('tc-main').style.marginBottom = (base*0.12)+'px';
   tc.querySelector('.tc-sub').style.fontSize = (base*0.45)+'px';
-  updateTitleCard();
 }
 
 function updateTitleCard() {
@@ -648,14 +720,15 @@ function syncZoomUI() {
   zoom = l2s(map.getZoom());
   if (zoom !== lastZoom) {
     lastZoom = zoom;
-    G('labels').style.setProperty('--inv', (1/zoom).toFixed(6));
     G('zoom-pct').textContent = Math.round(zoom*100)+'%';
     checkLOD();
   }
 }
 
 function checkLOD() {
-  const lod = zoom<Z_RGN ? 'none' : zoom<Z_ENT ? 'rgn' : 'all';
+  // Region labels stay visible all the way down to the dynamic minimum zoom
+  const zRgn = Math.min(Z_RGN, minZoom());
+  const lod = zoom < zRgn - 1e-9 ? 'none' : zoom<Z_ENT ? 'rgn' : 'all';
   if (lod !== curLOD) { curLOD=lod; G('labels').className='lod-'+lod; }
   const showGeo = zoom >= Z_GEO;
   if (showGeo !== curGeoVis) setGeoVis(showGeo);
@@ -671,13 +744,17 @@ const MAP_BOUNDS = [[-SVG_H, 0], [0, SVG_W]];
 
 function minZoom() { return Math.max(Z_MIN, window.innerWidth/SVG_W, window.innerHeight/SVG_H); }
 
-/* Existing #world (geo-svg + labels + title card) synced to the map —
-   identical transform to the old translate3d+scale, but driven by Leaflet. */
+/* Existing #world (geo-svg + labels + title card) synced to the map.
+   "Bake" architecture: while a gesture is in progress the whole layer is
+   CSS-scaled (cheap, single transform); once the zoom settles the scale is
+   baked into element coordinates/sizes so that at rest NO ancestor scale
+   exists — text renders at native resolution (crisp on mobile GPUs, which
+   cap raster resolution of huge scaled layers). */
+let bakedZoom = 1, worldLayer = null, bakeTimer = 0;
+
 const WorldLayer = L.Layer.extend({
   onAdd(m) {
     this._el = G('world');
-    this._el.style.width  = SVG_W + 'px';
-    this._el.style.height = SVG_H + 'px';
     L.DomUtil.addClass(this._el, 'leaflet-zoom-animated');
     m.getPane('overlayPane').appendChild(this._el);
     this._update();
@@ -690,24 +767,55 @@ const WorldLayer = L.Layer.extend({
   },
   _update() {
     const p = this._map.latLngToLayerPoint([0, 0]);
-    L.DomUtil.setTransform(this._el, p, l2s(this._map.getZoom()));
+    L.DomUtil.setTransform(this._el, p, l2s(this._map.getZoom()) / bakedZoom);
   },
   _animateZoom(e) {
     const p = this._map._latLngToNewLayerPoint([0, 0], e.zoom, e.center);
-    L.DomUtil.setTransform(this._el, p, l2s(e.zoom));
+    L.DomUtil.setTransform(this._el, p, l2s(e.zoom) / bakedZoom);
   },
 });
+
+function posLabel(el, s) {
+  if (el._ent) { el.style.left = el._ax*s + 'px'; el.style.top = el._ay*s + 'px'; }
+  else { el.style.left = (el._ax*s - el._w/2) + 'px'; el.style.top = (el._ay*s - el._h/2) + 'px'; }
+}
+
+function bake(s) {
+  if (s === bakedZoom || !worldLayer) return;
+  bakedZoom = s;
+  for (const id of ['world', 'geo-svg', 'labels']) {
+    const el = G(id);
+    el.style.width = SVG_W*s + 'px'; el.style.height = SVG_H*s + 'px';
+  }
+  for (const el of lblEls) if (el) posLabel(el, s);
+  layoutTitleCard(s);
+  worldLayer._update();
+}
+function scheduleBake() {
+  clearTimeout(bakeTimer);
+  bakeTimer = setTimeout(() => bake(zoom), 140);
+}
 
 function setupMap() {
   map = L.map('vp', {
     crs: L.CRS.Simple,
     attributionControl: false, zoomControl: false,
-    zoomSnap: 0, zoomDelta: 0.35, wheelPxPerZoomLevel: 380,
+    zoomSnap: 0, zoomDelta: 0.35, scrollWheelZoom: false,
     minZoom: s2l(minZoom()), maxZoom: s2l(Z_MAX),
     maxBounds: MAP_BOUNDS, maxBoundsViscosity: 1.0,
     bounceAtZoomLimits: false,
     doubleClickZoom: false, boxZoom: false, keyboard: false,
   });
+
+  // Custom wheel zoom: immediate, delta-proportional (smooth on trackpads;
+  // ctrl+wheel = trackpad pinch gesture), zooming around the cursor.
+  map.getContainer().addEventListener('wheel', e => {
+    e.preventDefault();
+    const unit = e.deltaMode === 1 ? 20 : 1;   // line-mode (Firefox)
+    const dz = Math.max(-0.45, Math.min(0.45,
+      e.ctrlKey ? -e.deltaY * 0.012 : -e.deltaY * unit / 340));
+    map.setZoomAround(map.mouseEventToContainerPoint(e), map.getZoom() + dz, { animate: false });
+  }, { passive: false });
 
   // Tile pyramid: level t covers 2008·2^t × 1920·2^t px (t = 0…3).
   // Retina: fetch one level higher and render at 128 css-px/tile → 1 tile px = 1 device px.
@@ -718,15 +826,19 @@ function setupMap() {
     ? Object.assign(common, { tileSize: 128, zoomOffset: 1, minNativeZoom: -1, maxNativeZoom: 2 })
     : Object.assign(common, { tileSize: 256, zoomOffset: 0, minNativeZoom: 0,  maxNativeZoom: 3 }));
   tileLayer.addTo(map);
-  map.addLayer(new WorldLayer());
+  map.addLayer(worldLayer = new WorldLayer());
 
   map.on('zoom viewreset zoomend', syncZoomUI);
-  map.on('dragstart', () => { didMove = true; });
-  map.on('dragend',   () => { setTimeout(() => { didMove = false; }, 0); });
+  map.on('zoomend viewreset', scheduleBake);
+  map.on('movestart zoomstart', hideTip);
+  map.on('click', hideTip);
   window.addEventListener('resize', () => {
     map.invalidateSize();
     map.setMinZoom(s2l(minZoom()));
+    checkLOD();
   });
+  // Movement guard for label taps/clicks (replaces old didMove flag)
+  document.addEventListener('pointerdown', e => { downXY = { x: e.clientX, y: e.clientY }; }, true);
 }
 
 function initialView() {
@@ -850,6 +962,7 @@ async function init() {
     setupMap();
     setupUI();
     initialView();
+    bake(zoom);            // bake the initial scale so labels/geo render crisp at rest
 
     // Hide the loader once visible tiles are in (or after a grace timeout)
     let ldHidden = false;
