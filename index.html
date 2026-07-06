@@ -265,6 +265,7 @@ const VER   = 'v1.';
 
 const Z_MIN  = 0.5, Z_MAX = 4.5, Z_INIT = 0.9;
 const Z_RGN  = 0.7, Z_ENT = 1.3, Z_GEO  = 2.0;
+const Z_FONT_LOCK = 2.0;   // labels keep constant screen size up to this zoom, then grow with the map
 const RGN_FONT_SCALE = 1.0, ENT_FONT = 12;
 const GF_ZH = 14, GF_OTHER = 9;    // geo label font sizes (world-px)
 const CELL = 14;
@@ -547,27 +548,24 @@ function buildLabels() {
     el._id = item.id; el._ent = !isR;
     if (isR) { el._ax = p.cx; el._ay = p.cy; el._w = p.W; el._h = p.H; }
     else     { el._ax = item.ax; el._ay = item.ay; }
-    posLabel(el, bakedZoom);
 
     el.dataset.s = String(states[i]);
 
     const dot = document.createElement('div'); dot.className = 'dot';
     const txt = document.createElement('span'); txt.className = 'ltxt';
     txt.textContent = T(item.id);
-    txt.style.fontSize = p.sf + 'px';
 
     el.appendChild(dot); el.appendChild(txt);
+    el._txt = txt; el._fs = p.sf;
+    posLabel(el, bakedZoom);
+
     el.addEventListener('click', e => {
       e.stopPropagation();
-      if (movedSince(e)) return;                       // was a drag, not a tap
-      if (TOUCH_MODE && e.target.closest('.ltxt')) {   // mobile: tap on text = annotation
-        showTip(el, item.id);
-        return;
-      }
-      hideTip();
+      if (movedSince(e)) return;                 // was a drag, not a tap
       const next = (states[i] + 1) % 5;
       states[i] = next;
       el.dataset.s = String(next);
+      if (TOUCH_MODE) showTip(el, item.id);      // mobile: annotation rides along with the cycle
     });
     container.appendChild(el);
     return el;
@@ -658,13 +656,13 @@ async function toggleLang() {
   lang     = newLang;
   langData = langCache[newLang];
 
-  // Update map label texts + font sizes
+  // Update map label texts + font sizes (posLabel applies zoom font growth)
   lblEls.forEach((el, i) => {
     const item = items[i];
-    const txt  = el.querySelector('.ltxt');
-    txt.textContent = T(item.id);
+    el._txt.textContent = T(item.id);
     const scale = lang !== 'zh' ? (item.role==='entry' ? 0.83 : 0.80) : 1.0;
-    txt.style.fontSize = (item.screenFont * scale) + 'px';
+    el._fs = item.screenFont * scale;
+    posLabel(el, bakedZoom);
   });
 
   // Update geo labels
@@ -776,8 +774,15 @@ const WorldLayer = L.Layer.extend({
 });
 
 function posLabel(el, s) {
-  if (el._ent) { el.style.left = el._ax*s + 'px'; el.style.top = el._ay*s + 'px'; }
-  else { el.style.left = (el._ax*s - el._w/2) + 'px'; el.style.top = (el._ay*s - el._h/2) + 'px'; }
+  const f = Math.max(1, s / Z_FONT_LOCK);          // font growth beyond Z_FONT_LOCK
+  el._txt.style.fontSize = (el._fs * f) + 'px';
+  if (el._ent) {
+    el._txt.style.maxWidth = Math.round(74 * f) + 'px';
+    el.style.left = el._ax*s + 'px'; el.style.top = el._ay*s + 'px';
+  } else {
+    el.style.left = (el._ax*s - el._w*f/2) + 'px';
+    el.style.top  = (el._ay*s - el._h*f/2) + 'px';
+  }
 }
 
 function bake(s) {
@@ -821,7 +826,8 @@ function setupMap() {
   // Retina: fetch one level higher and render at 128 css-px/tile → 1 tile px = 1 device px.
   const retina = (window.devicePixelRatio || 1) > 1.5;
   const common = { bounds: MAP_BOUNDS, noWrap: true, minZoom: -5,
-                   keepBuffer: 3, updateWhenZooming: false };
+                   keepBuffer: 4, updateWhenZooming: false,
+                   updateWhenIdle: false };   // load tiles DURING panning, not only after it ends
   tileLayer = L.tileLayer(TILE_URL, retina
     ? Object.assign(common, { tileSize: 128, zoomOffset: 1, minNativeZoom: -1, maxNativeZoom: 2 })
     : Object.assign(common, { tileSize: 256, zoomOffset: 0, minNativeZoom: 0,  maxNativeZoom: 3 }));
@@ -843,13 +849,15 @@ function setupMap() {
 
 function initialView() {
   const ta = lastData?._meta?.title_area, mz = minZoom();
-  if (ta?.tl) {
+  const overview = TOUCH_MODE || window.innerWidth < 768;
+  if (!overview && ta?.tl) {
     const s = Math.max(Z_INIT, mz);
-    // title-area top-left pinned at screen (40, 30) — same as before
+    // desktop: title-area top-left pinned at screen (40, 30) — same as before
     const cx = ta.tl.x/100*SVG_W + (window.innerWidth /2 - 40) / s;
     const cy = ta.tl.y/100*SVG_H + (window.innerHeight/2 - 30) / s;
     map.setView([-cy, cx], s2l(s), { animate: false });
   } else {
+    // mobile / narrow screens: whole-map overview, region labels visible immediately
     map.setView([-SVG_H/2, SVG_W/2], s2l(mz), { animate: false });
   }
   syncZoomUI();
