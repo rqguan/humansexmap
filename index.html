@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>人类性癖地图</title>
-<link rel="preload" href="1366.svg" as="image">
+<link rel="stylesheet" href="leaflet/leaflet.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -16,10 +16,11 @@
 body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:var(--font)}
 
 /* ── Viewport & World ── */
-#vp{width:100vw;height:100vh;overflow:hidden;position:relative;cursor:grab;touch-action:none}
-#vp.drag{cursor:grabbing}
-#world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform;contain:layout}
-#bg{display:block;max-width:none;user-select:none;pointer-events:none}
+#vp{width:100vw;height:100vh;overflow:hidden;position:relative}
+#vp.leaflet-container{background:transparent;font-family:var(--font)}
+#vp:focus{outline:none}
+#world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform;contain:layout;pointer-events:none}
+#world .lbl{pointer-events:auto}
 #geo-svg{position:absolute;top:0;left:0;pointer-events:none;overflow:visible}
 
 /* ── Labels ── */
@@ -76,7 +77,7 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
 .tc-credit{font-size:.78em;opacity:.7}
 
 /* ── UI overlay ── */
-#ui{position:fixed;inset:0;pointer-events:none;z-index:200}
+#ui{position:fixed;inset:0;pointer-events:none;z-index:1000}
 
 #legend{
   position:absolute;bottom:70px;left:16px;
@@ -149,7 +150,7 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
 #attr a{color:rgba(200,144,42,.44);text-decoration:none}
 #attr a:hover{color:rgba(200,144,42,.9);text-decoration:underline}
 
-#loading{position:fixed;inset:0;z-index:999;background:var(--bg);
+#loading{position:fixed;inset:0;z-index:2000;background:var(--bg);
          display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
 .ld-t{font-size:20px;color:var(--acc);text-align:center;line-height:1.4;
       text-shadow:0 0 20px rgba(200,144,42,.3);font-family:var(--font)}
@@ -170,7 +171,6 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
 
 <div id="vp">
   <div id="world">
-    <img id="bg" src="1366.svg" draggable="false" alt="">
     <svg id="geo-svg"></svg>
     <div id="labels"></div>
     <div id="title-card">
@@ -235,6 +235,7 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
   </div>
 </div>
 
+<script src="leaflet/leaflet.js"></script>
 <script>
 'use strict';
 
@@ -242,6 +243,7 @@ body{background:var(--bg);overflow:hidden;width:100vw;height:100vh;font-family:v
    CONFIG
 ═══════════════════════════════════════════════════════════ */
 const DATA_URL  = 'data.json';
+const TILE_URL  = 'tiles/{z}/{x}/{y}.webp';
 const LANG_URL  = l => `lang/${l}.json`;
 const SVG_W = 2008, SVG_H = 1920;
 const VER   = 'v1.';
@@ -282,9 +284,9 @@ let langCache = {};         // { 'zh' → langData, 'en' → langData, ... }
 let lastData  = null;
 let lastZoom  = -1;
 
-let zoom = 1, panX = 0, panY = 0;
-let dragging = false, didMove = false, dragO = {x:0, y:0};
-let rafPending = false;
+let zoom = 1;               // app scale (CSS px per SVG unit) — kept in sync with Leaflet
+let map = null, tileLayer = null;
+let didMove = false;
 let curLOD = '', curGeoVis = null;
 
 /* ═══════════════════════════════════════════════════════════
@@ -640,13 +642,10 @@ function setGeoVis(show) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   RENDER LOOP — RAF throttled, pan skips zoom-only work
+   ZOOM-DEPENDENT UI (labels inverse scale, LOD, zoom %)
 ═══════════════════════════════════════════════════════════ */
-const scheduleRender = () => { if (!rafPending) { rafPending=true; requestAnimationFrame(applyT); } };
-
-function applyT() {
-  rafPending = false;
-  G('world').style.transform = `translate3d(${Math.round(panX)}px,${Math.round(panY)}px,0) scale(${zoom})`;
+function syncZoomUI() {
+  zoom = l2s(map.getZoom());
   if (zoom !== lastZoom) {
     lastZoom = zoom;
     G('labels').style.setProperty('--inv', (1/zoom).toFixed(6));
@@ -663,80 +662,90 @@ function checkLOD() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   PAN / ZOOM
+   LEAFLET MAP — CRS.Simple, latlng = SVG units ([-y, x])
+   leaflet zoom l ⇄ app scale s:  s = 2^l
 ═══════════════════════════════════════════════════════════ */
+const s2l = s => Math.log2(s);          // app scale  → leaflet zoom
+const l2s = l => Math.pow(2, l);        // leaflet zoom → app scale
+const MAP_BOUNDS = [[-SVG_H, 0], [0, SVG_W]];
+
 function minZoom() { return Math.max(Z_MIN, window.innerWidth/SVG_W, window.innerHeight/SVG_H); }
-function clampPan() {
-  const vw=window.innerWidth, vh=window.innerHeight;
-  panX = Math.min(Math.max(panX, vw - SVG_W*zoom), 0);
-  panY = Math.min(Math.max(panY, vh - SVG_H*zoom), 0);
+
+/* Existing #world (geo-svg + labels + title card) synced to the map —
+   identical transform to the old translate3d+scale, but driven by Leaflet. */
+const WorldLayer = L.Layer.extend({
+  onAdd(m) {
+    this._el = G('world');
+    this._el.style.width  = SVG_W + 'px';
+    this._el.style.height = SVG_H + 'px';
+    L.DomUtil.addClass(this._el, 'leaflet-zoom-animated');
+    m.getPane('overlayPane').appendChild(this._el);
+    this._update();
+  },
+  onRemove() { this._el.remove(); },
+  getEvents() {
+    const ev = { zoom: this._update, viewreset: this._update, zoomend: this._update };
+    if (this._map._zoomAnimated) ev.zoomanim = this._animateZoom;
+    return ev;
+  },
+  _update() {
+    const p = this._map.latLngToLayerPoint([0, 0]);
+    L.DomUtil.setTransform(this._el, p, l2s(this._map.getZoom()));
+  },
+  _animateZoom(e) {
+    const p = this._map._latLngToNewLayerPoint([0, 0], e.zoom, e.center);
+    L.DomUtil.setTransform(this._el, p, l2s(e.zoom));
+  },
+});
+
+function setupMap() {
+  map = L.map('vp', {
+    crs: L.CRS.Simple,
+    attributionControl: false, zoomControl: false,
+    zoomSnap: 0, zoomDelta: 0.35, wheelPxPerZoomLevel: 380,
+    minZoom: s2l(minZoom()), maxZoom: s2l(Z_MAX),
+    maxBounds: MAP_BOUNDS, maxBoundsViscosity: 1.0,
+    bounceAtZoomLimits: false,
+    doubleClickZoom: false, boxZoom: false, keyboard: false,
+  });
+
+  // Tile pyramid: level t covers 2008·2^t × 1920·2^t px (t = 0…3).
+  // Retina: fetch one level higher and render at 128 css-px/tile → 1 tile px = 1 device px.
+  const retina = (window.devicePixelRatio || 1) > 1.5;
+  const common = { bounds: MAP_BOUNDS, noWrap: true, minZoom: -5,
+                   keepBuffer: 3, updateWhenZooming: false };
+  tileLayer = L.tileLayer(TILE_URL, retina
+    ? Object.assign(common, { tileSize: 128, zoomOffset: 1, minNativeZoom: -1, maxNativeZoom: 2 })
+    : Object.assign(common, { tileSize: 256, zoomOffset: 0, minNativeZoom: 0,  maxNativeZoom: 3 }));
+  tileLayer.addTo(map);
+  map.addLayer(new WorldLayer());
+
+  map.on('zoom viewreset zoomend', syncZoomUI);
+  map.on('dragstart', () => { didMove = true; });
+  map.on('dragend',   () => { setTimeout(() => { didMove = false; }, 0); });
+  window.addEventListener('resize', () => {
+    map.invalidateSize();
+    map.setMinZoom(s2l(minZoom()));
+  });
 }
 
 function initialView() {
   const ta = lastData?._meta?.title_area, mz = minZoom();
   if (ta?.tl) {
-    zoom = Math.max(Z_INIT, mz);
-    panX = 40 - ta.tl.x/100*SVG_W*zoom;
-    panY = 30 - ta.tl.y/100*SVG_H*zoom;
+    const s = Math.max(Z_INIT, mz);
+    // title-area top-left pinned at screen (40, 30) — same as before
+    const cx = ta.tl.x/100*SVG_W + (window.innerWidth /2 - 40) / s;
+    const cy = ta.tl.y/100*SVG_H + (window.innerHeight/2 - 30) / s;
+    map.setView([-cy, cx], s2l(s), { animate: false });
   } else {
-    zoom = mz;
-    panX = (window.innerWidth  - SVG_W*zoom)/2;
-    panY = (window.innerHeight - SVG_H*zoom)/2;
+    map.setView([-SVG_H/2, SVG_W/2], s2l(mz), { animate: false });
   }
-  clampPan(); scheduleRender();
+  syncZoomUI();
 }
 function resetView() { initialView(); }
 
-function doZoom(f, cx, cy) {
-  cx = cx ?? window.innerWidth/2; cy = cy ?? window.innerHeight/2;
-  const nz = Math.min(Math.max(zoom*f, minZoom()), Z_MAX);
-  panX = cx-(cx-panX)*(nz/zoom); panY = cy-(cy-panY)*(nz/zoom); zoom = nz;
-  clampPan(); scheduleRender();
-}
-
-function setupPanZoom() {
-  const vp = G('vp');
-  vp.addEventListener('wheel', e => { e.preventDefault(); doZoom(e.deltaY<0?1.12:.9, e.clientX, e.clientY); }, {passive:false});
-
-  vp.addEventListener('mousedown', e => {
-    if (e.button !== 0) return;
-    dragging=true; didMove=false;
-    dragO = {x: e.clientX-panX, y: e.clientY-panY};
-    vp.classList.add('drag');
-    G('labels').style.pointerEvents = 'none';
-  });
-  document.addEventListener('mousemove', e => {
-    if (!dragging) return;
-    const nx=e.clientX-dragO.x, ny=e.clientY-dragO.y;
-    if (Math.abs(nx-panX)>3 || Math.abs(ny-panY)>3) didMove=true;
-    panX=nx; panY=ny; clampPan(); scheduleRender();
-  });
-  document.addEventListener('mouseup', () => {
-    if (!dragging) return;
-    dragging=false; G('vp').classList.remove('drag');
-    G('labels').style.pointerEvents = '';
-    setTimeout(()=>{ didMove=false; }, 0);
-  });
-
-  let lt=0, lts=[];
-  vp.addEventListener('touchstart', e => {
-    lts = Array.from(e.touches).map(t=>({x:t.clientX,y:t.clientY}));
-    if (e.touches.length===2) lt=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
-    G('labels').style.pointerEvents = 'none';
-  }, {passive:true});
-  vp.addEventListener('touchend', () => { G('labels').style.pointerEvents=''; }, {passive:true});
-  vp.addEventListener('touchmove', e => {
-    e.preventDefault();
-    if (e.touches.length===1 && lts.length>=1) {
-      panX+=e.touches[0].clientX-lts[0].x; panY+=e.touches[0].clientY-lts[0].y;
-      clampPan(); scheduleRender();
-    } else if (e.touches.length===2) {
-      const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
-      doZoom(d/lt, (e.touches[0].clientX+e.touches[1].clientX)/2, (e.touches[0].clientY+e.touches[1].clientY)/2);
-      lt=d;
-    }
-    lts = Array.from(e.touches).map(t=>({x:t.clientX,y:t.clientY}));
-  }, {passive:false});
+function doZoom(f) {
+  map.setZoom(map.getZoom() + s2l(f));
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -812,7 +821,7 @@ function showError(msg, detail) {
         必须通过 HTTP 服务器访问：<br>
         <code>python3 -m http.server 8080</code><br>
         然后访问 <a href="http://localhost:8080" style="color:#c8902a">http://localhost:8080</a><br>
-        确认 <code>data.json</code>、<code>lang/zh.json</code>、<code>1366.svg</code> 都在同一目录
+        确认 <code>data.json</code>、<code>lang/zh.json</code>、<code>tiles/</code>、<code>leaflet/</code> 都在同一目录
       </small>
     </div>`;
 }
@@ -833,19 +842,20 @@ async function init() {
     states = new Uint8Array(items.length);
     try { await restoreHash(); } catch(e) { console.warn(e); }
 
-    const bg = G('bg');
-    bg.style.width=SVG_W+'px'; bg.style.height=SVG_H+'px';
-    await new Promise(r => { if(bg.complete&&bg.naturalWidth){r();return;} bg.onload=r; bg.onerror=r; setTimeout(r,10000); });
-
     try { buildGeoSVG();         } catch(e) { console.error('[Map] geo:', e); }
     try { buildLabels();         } catch(e) { console.error('[Map] labels:', e); }
     try { setupTitleCard(mapData); } catch(e) { console.error('[Map] title:', e); }
 
     applyUIStrings();
-    setupPanZoom();
+    setupMap();
     setupUI();
     initialView();
-    G('loading').style.display = 'none';
+
+    // Hide the loader once visible tiles are in (or after a grace timeout)
+    let ldHidden = false;
+    const hideLoading = () => { if (!ldHidden) { ldHidden = true; G('loading').style.display = 'none'; } };
+    tileLayer.once('load', hideLoading);
+    setTimeout(hideLoading, 6000);
     console.log(`[Map] OK — ${items.length} items, lang=zh`);
   } catch(e) {
     console.error(e);

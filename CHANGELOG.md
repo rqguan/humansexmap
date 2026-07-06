@@ -25,6 +25,22 @@
 
 ---
 
+## [2026-07-06]
+
+### Performance
+
+- **底图瓦片化（Leaflet）**：以 `L.CRS.Simple` 接入 Leaflet 1.9.4（本地 vendored，无 CDN、无构建依赖），底图从整张 `1366.svg` 改为 `tiles/{z}/{x}/{y}.webp` 瓦片金字塔（z0–z3、256px、共 5044 张约 21MB，视口按需加载）。原 SVG 内嵌 8145×7801 PNG（base64 约 3.3MB，解码后占用 250MB+ 纹理内存）不再加载，首屏仅需数十 KB 瓦片，平移/缩放开销恒定。
+- 瓦片自矢量源高清渲染：z3 全图 16064×15360，retina 设备自动取高一级瓦片（`tileSize:128` + `zoomOffset:1`），450% 最大缩放下仅约 1.12× 上采样，线稿清晰。
+- 分析确认：原内嵌大 PNG 实为纯色海洋底（#3895BF 圆角矩形），海岸线/山脉/河流/边界均为矢量 path，已随瓦片一并渲染。
+
+### Changed
+
+- 平移/缩放/惯性/边界钳制改由 Leaflet 驱动：`zoomSnap:0` 平滑分数缩放，`maxBounds` + `viscosity:1` 等效原 `clampPan`，动态 `minZoom` 仍保证地图铺满视口。
+- `#world`（geo-svg + labels + title card）作为自定义 `L.Layer` 挂载到 overlayPane，transform 公式与原实现一致（leaflet zoom = log2(原 zoom)）：LOD 阈值、`--inv` counter-scale、`data.json` 百分比坐标、URL hash 分享编码全部不变。
+- `index.html` 不再引用 `1366.svg`（文件保留在仓库作为矢量源）；新增 `leaflet/`（js+css）与 `tiles/` 目录。
+
+---
+
 ## [2026-05-15]
 
 ### Mobile
